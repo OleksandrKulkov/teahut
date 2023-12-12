@@ -5,7 +5,7 @@ import Logo from './Logo.astro';
 const containerMaxWidth = "960px";
 ---
 
-<Container {containerMaxWidth}>
+<!-- <Container {containerMaxWidth}> -->
     <nav class="navigation" aria-label="Primary">
         <a class="header-logo" href="/" aria-label="На Головну сторінку">
             <Logo />
@@ -17,7 +17,7 @@ const containerMaxWidth = "960px";
             <input type="checkbox" />           
         </label>
     </nav>
-</Container>
+<!-- </Container -->
 
 <style>
     :root {
@@ -116,8 +116,8 @@ const containerMaxWidth = "960px";
         flex-direction: column;
         gap: var(--hamburger-gap);
         width: max-content;
-        top: 51px;
-        right: 50px;
+        top: 35px;
+        right: 35px;
      }
 
     .hamburger-menu:has(input:checked) {
