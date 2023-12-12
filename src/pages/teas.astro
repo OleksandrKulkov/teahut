@@ -1,4 +1,7 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+
 const pageTitle = "Наші чаї";
 ---
 
@@ -11,9 +14,12 @@ const pageTitle = "Наші чаї";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Хатинка</a>
-        <a href="/about/">Про нас</a>
-		<a href="/teas/">Наші чаї</a>
+		<Navigation />
 		<h1>{pageTitle}</h1>
+		<ul>
+			<li><a href="/teas/2005-liubao/">Лю Бао 2005-го</a></li>
+			<li><a href="/teas/2017-ailao-dianhong-cake/">Млинець Дяньхона з Айлао</a></li>
+			<li><a href="/teas/2021-ailao-sheng/">"Поза хмарами", Шен пуер з Айлао</a></li>
+		</ul>
     </body>
 </html>
