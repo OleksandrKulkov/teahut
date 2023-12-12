@@ -21,11 +21,11 @@ const containerMaxWidth = "960px";
 
 <style>
     :root {
+        --foreground: #2b1709;
+        --background: #f2e9bf;
         --bar-width: 30px;
         --bar-height: 4px;
         --hamburger-gap: 3px;
-        --foreground: #2b1709;
-        --background: #f2e9bf;
         --hamburger-margin: 8px;
         --animation-timing: 200ms ease-in-out;
         --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -68,6 +68,7 @@ const containerMaxWidth = "960px";
 
     .link {
         grid-area: link;
+        font-size: larger;
         font-weight: 600;
         text-align: center;
         text-decoration: none;
@@ -86,12 +87,6 @@ const containerMaxWidth = "960px";
 
     .library-link {
         grid-area: link3;
-    }
-
-    .link:hover,
-    .link:active {
-        background-color: var(--foreground);
-        color: var(--background);
     }
 
     .navigation:has(input:checked) {
@@ -185,6 +180,12 @@ const containerMaxWidth = "960px";
         .link {
             display: flex;
             padding: 0;
+            color: var(--background);
+        }
+
+        .link:hover,
+        .link:active {
+            background-color: var(--foreground);
             color: var(--background);
         }
     }
