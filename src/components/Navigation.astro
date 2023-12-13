@@ -13,6 +13,10 @@ const containerMaxWidth = "960px";
         <a class="home-link link" href="/">Чайна Хатинка</a>
         <a class="teas-link link" href="/teas/">Наші чаї</a>
         <a class="library-link link" href="/about/">Про нас</a>
+        <div class="search-toggle-block link">
+            <a class="search-link" href="/search/">Пошук</a>
+            <button class="toggle">Перемикач</button>
+        </div>
         <label class="hamburger-menu">
             <input type="checkbox" />           
         </label>
@@ -41,7 +45,8 @@ const containerMaxWidth = "960px";
         grid-template-areas: 
         "logo link1 hamburger"
         ". link2 ."
-        ". link3 .";
+        ". link3 ."
+        ". link4 .";
         align-items: center;
         justify-items: center;
         transition: opacity var(--animation-timing), width var(--animation-timing),
@@ -87,6 +92,11 @@ const containerMaxWidth = "960px";
 
     .library-link {
         grid-area: link3;
+    }
+
+    .search-toggle-block {
+        grid-area: link4;
+        display: flex;
     }
 
     .navigation:has(input:checked) {
