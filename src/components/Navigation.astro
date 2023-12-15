@@ -17,16 +17,14 @@ const containerMaxWidth = "960px";
             <a class="search-link" href="/search/">Пошук</a>
             <button class="toggle">Перемикач</button>
         </div>
-        <label class="hamburger-menu">
-            <input type="checkbox" />           
+        <label class="hamburger-menu" for="checkbox">
+            <input type="checkbox" id="checkbox"/>           
         </label>
     </nav>
 <!-- </Container -->
 
 <style>
     :root {
-        --foreground: #2b1709;
-        --background: #f2e9bf;
         --bar-width: 30px;
         --bar-height: 4px;
         --hamburger-gap: 3px;
@@ -36,6 +34,7 @@ const containerMaxWidth = "960px";
     }
 
     .navigation {
+        margin: 1rem;
         height: 56px;
         background-color: var(--foreground);
         border-radius: 1rem;
@@ -72,7 +71,6 @@ const containerMaxWidth = "960px";
     }
 
     .link {
-        grid-area: link;
         font-size: larger;
         font-weight: 600;
         text-align: center;
@@ -92,6 +90,10 @@ const containerMaxWidth = "960px";
 
     .library-link {
         grid-area: link3;
+    }
+
+    .search-link {
+        color: var(--foreground)
     }
 
     .search-toggle-block {
