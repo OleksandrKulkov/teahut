@@ -1,4 +1,5 @@
 ---
+import Icon from 'astro-icon';
 import Container from './Container.astro';
 import Logo from './Logo.astro';
 
@@ -13,8 +14,9 @@ const containerMaxWidth = "960px";
         <a class="home-link link" href="/">Чайна Хатинка</a>
         <a class="teas-link link" href="/teas/">Наші чаї</a>
         <a class="library-link link" href="/about/">Про нас</a>
-        <div class="search-toggle-block link">
-            <a class="search-link" href="/search/">Пошук</a>
+        <div class="search-toggle-block">
+            <a class="search-link icon" href="/search/" aria-label="Search">
+                <Icon name="ic:baseline-search" width="24" height="24" /></a>
             <button class="toggle">Перемикач</button>
         </div>
         <label class="hamburger-menu" for="checkbox">
@@ -36,7 +38,7 @@ const containerMaxWidth = "960px";
     .navigation {
         margin: 1rem;
         height: 56px;
-        background-color: var(--foreground);
+        background-color: var(--header-footer);
         border-radius: 1rem;
         display: grid;
         grid-template-columns: 56px 1fr 56px;
@@ -64,19 +66,20 @@ const containerMaxWidth = "960px";
         border-radius: 1rem;
         background-color: var(--background);
     }
-
-    .link:not(.home-link) {
-        display: none;
-        color: var(--foreground);
-    }
-
-    .link {
+    
+    .link,
+    .search-toggle-block {
         font-size: larger;
         font-weight: 600;
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .link:not(.home-link) {
+        display: none;
+        color: var(--foreground);
     }
 
     .home-link {
@@ -92,13 +95,19 @@ const containerMaxWidth = "960px";
         grid-area: link3;
     }
 
+    .search-toggle-block {
+        grid-area: link4;
+        display: none;
+        gap: 2rem;
+    }
+
     .search-link {
         color: var(--foreground)
     }
 
-    .search-toggle-block {
-        grid-area: link4;
-        display: flex;
+    .search-link,
+    .toggle {
+        flex: 1 1 20%;
     }
 
     .navigation:has(input:checked) {
@@ -109,6 +118,11 @@ const containerMaxWidth = "960px";
     .navigation:has(input:checked) > .link {
         color: var(--foreground);
         display: block;
+    }
+
+    .navigation:has(input:checked) > .search-toggle-block {
+        color: var(--foreground);
+        display: flex;
     }
 
     .navigation:has(input:checked) > .header-logo {
@@ -184,13 +198,18 @@ const containerMaxWidth = "960px";
         }
 
         .navigation {
+            margin: 0 1rem;
             grid-template-columns: 56px 3% repeat(3, auto) 35%;
             grid-template-areas:
             "logo . link1 link2 link3 .";
         }
 
-        .link {
-            display: flex;
+        .teas-link {
+            grid-area: link2;
+        }
+
+        .link:not(.home-link) {
+            display: block;
             padding: 0;
             color: var(--background);
         }
