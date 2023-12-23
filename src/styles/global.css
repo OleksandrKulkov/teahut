@@ -4,9 +4,9 @@
 :root {
     --background: #f2e8bd;
     --foreground: #272109;
-    --background-dark: #272109;
+    --background-dark: #22201c;
     --foreground-dark: #c4bda0;
-    --header-footer: #1b1905;
+    --header-footer: #1a1605;
 }
 
 *,
@@ -25,13 +25,15 @@ body {
     font-family: "Inter", system-ui, Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
     line-height: 1.5;
     margin: 0 auto;
+    width: 100%;
     min-width: 350px;
+    max-width: 100ch;
     min-height: 100%;
-    max-width: 90ch;
     color: var(--foreground-dark);
     background-color: var(--background-dark);
     display: flex;
 	flex-direction: column;
+    justify-content: center;
 }
 
 main {

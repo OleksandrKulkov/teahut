@@ -102,7 +102,7 @@ const containerMaxWidth = "960px";
     }
 
     .search-link {
-        color: var(--foreground)
+        color: var(--foreground-dark)
     }
 
     .search-link,
@@ -112,11 +112,11 @@ const containerMaxWidth = "960px";
 
     .navigation:has(input:checked) {
         height: 100%;
-        background-color: var(--background);
+        background-color: var(--header-footer);
     }
 
     .navigation:has(input:checked) > .link {
-        color: var(--foreground);
+        color: var(--foreground-dark);
         display: block;
     }
 
@@ -143,7 +143,7 @@ const containerMaxWidth = "960px";
 
     .hamburger-menu:has(input:checked) {
         --foreground: var(--background);
-        --background: #2b1709;
+        /* --background: #2b1709; */
     }
 
     .hamburger-menu:has(input:focus-visible)::before,
