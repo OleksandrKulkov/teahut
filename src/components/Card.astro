@@ -5,7 +5,7 @@ const { img, alt, pill, title, description, author_img, author_name, time } = As
 <article>
     <img src={img} alt={alt}>
     <p class="pill">{pill}</p>
-    <h2>{title}</h2>
+    <h3>{title}</h3>
     <p>{description}</p>
     <div class="author">
         <img src={author_img} alt={author_name}>
@@ -15,3 +15,9 @@ const { img, alt, pill, title, description, author_img, author_name, time } = As
         </div>
     </div>
 </article>
+
+<style>
+    article {
+        max-width: 300px;
+    }
+</style>
