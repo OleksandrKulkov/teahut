@@ -1,0 +1,39 @@
+---
+import ImageSlider from '../components/ImageSlider.astro';
+import MainLayout from './MainLayout.astro';
+
+const { frontmatter } = Astro.props;
+const  containerMaxWidth = "900";
+---
+<MainLayout pageTitle={frontmatter.title}>
+    <div class="information">
+        <ImageSlider />
+        <div class="text-information">
+            <h1 class="title">{frontmatter.title}</h1>
+            <p>{frontmatter.subtitle}</p>
+        </div>
+    </div>
+        <slot />
+</MainLayout>
+
+<style>
+    .information {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen  and (min-width: 768px){
+        .information {
+            flex-direction: row;
+        }
+        
+        .text-information {
+            margin-left: 3rem;
+        }
+
+        .title {
+            margin: 1rem 0 2rem;
+            text-align: center;
+        }
+    }
+</style>

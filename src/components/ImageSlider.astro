@@ -1,0 +1,247 @@
+---
+import imageSrc1 from '../assets/teas/2005-liubao/picture1.jpg';
+import imageSrc2 from '../assets/teas/2005-liubao/picture2.jpg';
+import imageSrc3 from '../assets/teas/2005-liubao/picture3.jpg';
+import imageSrc4 from '../assets/teas/2005-liubao/picture4.jpg';
+import imageSrc5 from '../assets/teas/2005-liubao/picture5.jpg';
+
+const imageTitle1 = "Любао 2005-го з Вуджов";
+const imageTitle2 = "Чудове листя з диких кущів";
+const imageTitle3 = "1 чашка";
+const imageTitle4 = "10 чашка";
+const imageTitle5 = "Чайне дно - спите листя";
+---
+
+<section class="slider">
+    <div class="wrapper">
+		<div class="slides">
+			<figure class="slide one">
+				<input type="radio" class="radio" name="images" id="image1" checked />
+				<label class="prev" for="image3"><span></span></label>
+				<img src={imageSrc1.src} alt={imageTitle1} id="image1" />
+				<label class="next" for="image2"><span></span></label>
+                <figcaption>{imageTitle1}</figcaption>
+            </figure>
+            <figure class="slide two">
+				<input type="radio" class="radio" name="images" id="image2" />
+				<label class="prev" for="image1"><span></span></label>
+                <img src={imageSrc2.src} alt={imageTitle2} id="image2" />
+				<label class="next" for="image3"><span></span></label>
+                <figcaption>{imageTitle2}</figcaption>
+            </figure>
+            <figure class="slide three">
+				<input type="radio" class="radio" name="images" id="image3" />
+				<label class="prev" for="image2"><span></span></label>
+                <img src={imageSrc3.src} alt={imageTitle3} id="image3" />
+				<label class="next" for="image4"><span></span></label>
+                <figcaption>{imageTitle3}</figcaption>
+            </figure>
+            <figure class="slide four">
+				<input type="radio" class="radio" name="images" id="image4" />
+				<label class="prev" for="image5"><span></span></label>
+                <img src={imageSrc4.src} alt={imageTitle4} id="image4" />
+				<label class="next" for="image5"><span></span></label>
+                <figcaption>{imageTitle4}</figcaption>
+            </figure>
+            <figure class="slide five">
+				<input type="radio" class="radio" name="images" id="image5" />
+				<label class="prev" for="image4"><span></span></label>
+                <img src={imageSrc5.src} alt={imageTitle5} id="image5" />
+				<label class="next" for="image1"><span></span></label>
+                <figcaption>{imageTitle5}</figcaption>
+            </figure>
+			<nav id="nav-slides">
+				<label for="image1" id="dot1" class="dots">
+					<img src={imageSrc1.src} alt={imageTitle1} style="" />1 слайд</label>
+				<label for="image2" id="dot2" class="dots">
+					<img src={imageSrc2.src} alt={imageTitle2} style="" />2 слайд</label>
+				<label for="image3" id="dot3" class="dots">
+					<img src={imageSrc3.src} alt={imageTitle3} style="" />3 слайд</label>
+				<label for="image4" id="dot4" class="dots">
+					<img src={imageSrc4.src} alt={imageTitle4} style="" />4 слайд</label>
+				<label for="image5" id="dot5" class="dots">
+					<img src={imageSrc5.src} alt={imageTitle5} style="" />5 слайд</label>
+			</nav>
+        </div>
+    </div>
+</section>
+
+<style>
+    img {
+	  object-fit: cover;
+	}
+
+	.radio {
+		position: absolute;
+		bottom: 40px;
+		opacity: 0.01;
+	}
+	
+	#image1,
+	#image2,
+	#image3,
+	#image4,
+	#image5
+	 {
+		accent-color: grey;
+	}
+
+	.slider {
+        padding: 1rem 0 5rem;
+    }
+
+	.wrapper {
+		position: relative;
+		max-width: 30rem;
+		aspect-ratio: 1/1;
+		margin: 1rem auto;
+		background: var(--background);
+	}
+
+	:global(.dark) .wrapper {
+        background: #22201c;
+    }
+	
+	.slides {
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+		width: 100%;
+		aspect-ratio: 1/1;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		gap: 1rem;
+		/* padding-bottom: 32px; */
+		-webkit-overflow-scrolling: touch;
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+	.slider .slides::-webkit-scrollbar {
+		display: none;
+	}
+	
+	.slider .slides {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	
+	.slider .slide {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+		/* padding-bottom: 32px; */
+	}
+
+	.slider .slide figcaption {
+		position: absolute;
+		display: block;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		max-inline-size: var(--size-content-3);
+		font-size: 1.2rem;
+		text-align: center;
+		color: #e2dbbe;
+		background: rgba(0, 0, 0, 0.7);
+		padding: .3rem;
+		margin: 0;
+		white-space: normal;
+	}
+
+	#nav-slides {
+		position: absolute;
+		left: 50%;
+		bottom: -9vw;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 2vw;
+	}
+
+	.dots {
+        /* pointer-events: none; */
+		width: 5vw;
+		height: 5vw;
+		border-radius: 50%;
+		overflow: hidden;
+		opacity: 0.3;
+		filter: saturate(0.5);
+		transition: opacity ease 250ms;
+		box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+	.dots img{
+		width: 100%;
+		object-fit: cover;
+	}
+
+	#nav-slides .dots:hover {
+		cursor: pointer;
+		opacity: 1;
+		filter: saturate(1);
+		transition: opacity 250ms ease;
+	}
+
+	.slide {z-index: 1;}
+
+	#image1:checked ~ .one,
+	#imabe2:checked ~ .two,
+	#image3:checked ~ .three,
+	#image4:checked ~ .four,
+	#image5:checked ~ .five 
+	{z-index: 9; animation: scroll 1s ease-in-out;}
+	
+	
+	
+	@media screen  and (min-width: 768px){
+		.slider {
+			padding: 1rem 0 7rem;
+        }
+		
+		.wrapper {
+			width: 50vw;
+			margin: 0;
+		}
+		
+		.slides {
+			border-radius: 1rem;
+			overflow: hidden;
+		}
+		
+		#nav-slides {
+			position: absolute;
+			left: 50%;
+			bottom: -5rem;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 2.5vw;
+		}
+
+		.dots {
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			opacity: 0.6;
+			filter: saturate(0.5);
+			transition: opacity ease 250ms;
+			box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
+		}
+
+		.dots img{
+			width: 100%;
+			object-fit: cover;
+		}
+		
+		.slides :has(#image1:checked) ~ #nav-slides #dot1,
+		.slides :has(#image2:checked) ~ #nav-slides #dot2,
+		.slides :has(#image3:checked) ~ #nav-slides #dot3,
+		.slides :has(#image4:checked) ~ #nav-slides #dot4,
+		.slides :has(#image5:checked) ~ #nav-slides #dot5 {
+			opacity: 1;
+			filter: saturate(1);
+		}
+	}
+</style>

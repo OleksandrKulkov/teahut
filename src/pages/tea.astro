@@ -1,0 +1,14 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import TeaCard from '../components/TeaCard.astro';
+
+const allTeas = await Astro.glob('../pages/teas/*.md');
+const pageTitle = "Наші чаї";
+---
+
+<MainLayout {pageTitle}>
+	<h1>{pageTitle}</h1>
+	<ul>
+		{allTeas.map((tea) => <TeaCard url={tea.url} title={tea.frontmatter.title} />)}
+	</ul>
+</MainLayout>

@@ -1,0 +1,171 @@
+---
+import Social from './Social.astro';
+---
+
+<footer>
+    <nav class="footer-links-grid">
+      <dl>
+        <dt><a class="" href='/'><strong>Чайна Хатинка</strong></a></dt>
+            <dd>
+                <a class="" href='#'>Наша Традиція</a>
+            </dd>
+            <dd>
+                <a class="" href='/about/'>Про нас</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Про нашу крамничку</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Як замовити?</a>
+            </dd>
+      </dl>
+      <dl>
+        <dt><a class="" href='/tea/'><strong>Наші чаї</strong></a></dt>
+            <dd>
+                <a class="" href='#'>Шен пуери</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Шу пуери й Хейча</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Червоні чаї</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Вулони й ҐАБА</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Зелені й Білі</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Японські чаї</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Чайне начиння</a>
+            </dd>
+            <dd>
+                <a class="" href='/tags/'>Чайні позначки</a>
+            </dd>
+      </dl>
+      <dl>
+        <dt><a class="" href='/library/'><strong>Читальня</strong></a></dt>
+            <dd>
+                <a class="" href='#'>Статті</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Поради з Ґонфу Ча</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Чайник Ґонфу</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Деякі поради щодо заварювання "Чаю місяця"</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Про чаї та пори року</a>
+            </dd>
+            <dd>
+                <a class="" href='#'>Питання і відповіді</a>
+            </dd>
+      </dl>
+    </nav>
+    <div class="footer-bottom-container">
+      <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
+      <Social />
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--header-footer);
+        font-family: "Inter", sans-serif;
+        color: var(--background);
+        padding: 0 1em;
+    }
+
+    dd {
+        font-size: 16px;
+    }
+
+    a,
+    a:visited {
+        text-decoration: none;
+        font-size: 16px;
+        color: unset;
+        opacity: 0.7;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        opacity: 1;
+        color: rgb(163, 128, 23);
+    }
+
+    .copyright {
+        margin-bottom: unset;
+        opacity: 0.8;
+    }
+
+    .footer-links-grid {
+        padding: 5vh 0 9vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-links-grid dl {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links-grid dl dt {
+        margin-bottom: 0.5rem;
+    }
+    .footer-links-grid dl dt strong {
+        font-weight: 900;
+    }
+
+    .footer-bottom-container {
+        padding: 0 0 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    @media(min-width: 480px) {
+        .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media(min-width: 630px) {
+        footer {
+            padding: 0 2rem;
+        }
+
+        .footer-bottom-container {
+        flex-direction: row;
+        gap: unset;
+        font-size: 1rem;
+        }
+    }
+
+    @media(min-width: 768px) {
+        .footer-links-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .footer-links-grid {
+        grid-template-columns: ;
+        }
+    }
+</style>

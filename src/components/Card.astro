@@ -1,0 +1,23 @@
+---
+const { img, alt, pill, title, description, author_img, author_name, time } = Astro.props;
+---
+
+<article>
+    <img src={img} alt={alt}>
+    <p class="pill">{pill}</p>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="author">
+        <img src={author_img} alt={author_name}>
+        <div>
+            <p><strong>{author_name}</strong></p>
+            <p>{time}</p>
+        </div>
+    </div>
+</article>
+
+<style>
+    article {
+        max-width: 300px;
+    }
+</style>
