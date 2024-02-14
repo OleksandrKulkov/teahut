@@ -6,20 +6,28 @@ const { frontmatter } = Astro.props;
 const  containerMaxWidth = "900";
 ---
 <MainLayout pageTitle={frontmatter.title}>
-    <div class="information">
+    <div class="information first-line">
         <ImageSlider />
         <div class="text-information">
-            <h1 class="title">{frontmatter.title}</h1>
-            <p>{frontmatter.subtitle}</p>
+            <div class="container">
+                <h1 class="title">{frontmatter.title}</h1>
+                <p>{frontmatter.subtitle}</p>
+            </div>
         </div>
     </div>
+    <div class="container">
         <slot />
+    </div>
 </MainLayout>
 
 <style>
     .information {
         display: flex;
         flex-direction: column;
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 
     @media screen  and (min-width: 768px){
@@ -30,6 +38,10 @@ const  containerMaxWidth = "900";
         .text-information {
             margin-left: 3rem;
         }
+
+        .container {
+        padding: 0;
+    }
 
         .title {
             margin: 1rem 0 2rem;

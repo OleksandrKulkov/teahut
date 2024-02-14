@@ -7,8 +7,8 @@ import imageSrc5 from '../assets/teas/2005-liubao/picture5.jpg';
 
 const imageTitle1 = "Любао 2005-го з Вуджов";
 const imageTitle2 = "Чудове листя з диких кущів";
-const imageTitle3 = "1 чашка";
-const imageTitle4 = "10 чашка";
+const imageTitle3 = "Перша чашка";
+const imageTitle4 = "Десята чашка";
 const imageTitle5 = "Чайне дно - спите листя";
 ---
 
@@ -67,9 +67,7 @@ const imageTitle5 = "Чайне дно - спите листя";
 </section>
 
 <style>
-    img {
-	  object-fit: cover;
-	}
+    img { object-fit: cover; }
 
 	.radio {
 		position: absolute;
@@ -81,14 +79,9 @@ const imageTitle5 = "Чайне дно - спите листя";
 	#image2,
 	#image3,
 	#image4,
-	#image5
-	 {
-		accent-color: grey;
-	}
+	#image5 { accent-color: grey; }
 
-	.slider {
-        padding: 1rem 0 5rem;
-    }
+	.slider { padding: 1rem 0 5rem; }
 
 	.wrapper {
 		position: relative;
@@ -98,9 +91,7 @@ const imageTitle5 = "Чайне дно - спите листя";
 		background: var(--background);
 	}
 
-	:global(.dark) .wrapper {
-        background: #22201c;
-    }
+	:global(.dark) .wrapper { background: #22201c; }
 	
 	.slides {
 		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
@@ -112,14 +103,11 @@ const imageTitle5 = "Чайне дно - спите листя";
 		scroll-behavior: smooth;
 		scroll-snap-type: x mandatory;
 		gap: 1rem;
-		/* padding-bottom: 32px; */
 		-webkit-overflow-scrolling: touch;
 		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
 	}
 
-	.slider .slides::-webkit-scrollbar {
-		display: none;
-	}
+	.slider .slides::-webkit-scrollbar { display: none; }
 	
 	.slider .slides {
 		scrollbar-width: none;
@@ -133,7 +121,6 @@ const imageTitle5 = "Чайне дно - спите листя";
 		height: 100%;
 		scroll-snap-align: start;
 		scroll-snap-stop: always;
-		/* padding-bottom: 32px; */
 	}
 
 	.slider .slide figcaption {
@@ -155,19 +142,19 @@ const imageTitle5 = "Чайне дно - спите листя";
 	#nav-slides {
 		position: absolute;
 		left: 50%;
-		bottom: -9vw;
+		bottom: -10vw;
 		transform: translateX(-50%);
 		display: flex;
-		gap: 2vw;
+		gap: 3vw;
 	}
 
 	.dots {
         /* pointer-events: none; */
-		width: 5vw;
-		height: 5vw;
+		width: 7vw;
+		height: 7vw;
 		border-radius: 50%;
 		overflow: hidden;
-		opacity: 0.3;
+		opacity: 0.7;
 		filter: saturate(0.5);
 		transition: opacity ease 250ms;
 		box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
@@ -204,6 +191,7 @@ const imageTitle5 = "Чайне дно - спите листя";
 		.wrapper {
 			width: 50vw;
 			margin: 0;
+			border-radius: 1rem;
 		}
 		
 		.slides {

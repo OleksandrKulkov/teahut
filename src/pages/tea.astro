@@ -7,8 +7,8 @@ const pageTitle = "Наші чаї";
 ---
 
 <MainLayout {pageTitle}>
-	<h1>{pageTitle}</h1>
-	<ul>
+	<h1 class="first-line last-line">{pageTitle}</h1>
+	<ul class="last-line">
 		{allTeas.map((tea) => <TeaCard url={tea.url} title={tea.frontmatter.title} />)}
 	</ul>
 </MainLayout>
