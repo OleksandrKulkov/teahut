@@ -29,7 +29,7 @@ import Logo from './Logo.astro';
     :root {
         --bar-width: 30px;
         --bar-height: 4px;
-        --hamburger-gap: 3px;
+        --hamburger-gap: 5px;
         --hamburger-margin: 8px;
         --animation-timing: 200ms ease-in-out;
         --hamburger-height: 18px;
@@ -38,8 +38,15 @@ import Logo from './Logo.astro';
     .navigation {
         margin: 0 1rem;
         height: 56px;
-        background-color: var(--header-footer);
+        background-color: var(--background);
         border-radius: 1rem;
+        box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
         display: grid;
         grid-template-columns: 56px 1fr 56px;
         grid-auto-rows: 56px;
@@ -51,6 +58,17 @@ import Logo from './Logo.astro';
         align-items: center;
         justify-items: center;
         transition: all var(--animation-timing) ease-in-out;
+    }
+
+    :global(.dark) .navigation {
+        background-color: var(--header);
+        box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.07),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.06),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.055),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.051),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.045),
+            100px 100px 80px rgba(0, 0, 0, 0.035);
     }
 
     :global(.dark) .navigation .link {
@@ -75,7 +93,7 @@ import Logo from './Logo.astro';
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Roboto', cursive, 'Open Sans', 'Helvetica Neue', sans-serif;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
     
@@ -85,9 +103,17 @@ import Logo from './Logo.astro';
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
+    :global(.dark) .link:not(.home-link) {
+        color: var(--foreground-dark);
+    }
+
     .home-link {
         grid-area: link1;
-        color: var(--background);
+        color: var(--foreground);
+    }
+
+    :global(.dark) .home-link {
+        color: var(--foreground-dark);
     }
 
     .teas-link {
@@ -106,9 +132,14 @@ import Logo from './Logo.astro';
     }
 
     .search-link {
-        color: var(--foreground-dark);
+        color: var(--foreground);
+        opacity: 0.8;
         vertical-align: middle;
         line-height: 0;
+    }
+
+    :global(.dark) .search-link {
+        color: var(--foreground-dark);
     }
 
     .search-link,
@@ -123,14 +154,29 @@ import Logo from './Logo.astro';
 
     .navigation:has(input:checked) {
         height: 100%;
-        background-color: var(--header-footer);
+        background-color: var(--background);
+        box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
+    :global(.dark) .navigation:has(input:checked) {
+        background-color: var(--header);
+    }
+
     .navigation:has(input:checked) > .link {
-        color: var(--foreground-dark);
+        color: var(--foreground);
         display: block;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    :global(.dark) .navigation:has(input:checked) > .link {
+        color: var(--foreground-dark);
     }
 
     .navigation:has(input:checked) > .search-toggle-block {
@@ -139,19 +185,17 @@ import Logo from './Logo.astro';
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    /* .navigation:has(input:checked) > .header-logo {
+    .navigation:has(input:checked) > .header-logo {
         border: none;
-    } */
+    }
 
     .hamburger-menu {
-        --x-width: calc(var(--hamburger-height) * 1.41421356237);
+        --x-width: calc(var(--hamburger-height) * 1.7);
         grid-area: hamburger;
         display: flex;
         flex-direction: column;
         gap: var(--hamburger-gap);
         width: max-content;
-        top: 35px;
-        right: 35px;
      }
 
     /* .hamburger-menu:has(input:checked) {
@@ -162,7 +206,7 @@ import Logo from './Logo.astro';
     .hamburger-menu:has(input:focus-visible)::after,
     .hamburger-menu input:focus-visible {
         border: 1px solid var(--background);
-        box-shadow: 0 0 0 1px var(--foreground);
+        box-shadow: 0 0 0 1px var(--foreground-dark);
     }
 
     /* .dark .hamburger-menu:has(input:focus-visible)::before,
@@ -178,7 +222,7 @@ import Logo from './Logo.astro';
         content: "";
         width: var(--bar-width);
         height: var(--bar-height);
-        background-color: var(--background);
+        background-color: var(--foreground);
         border-radius: 9999px;
         transform-origin: left center;
         transition: all var(--animation-timing);
@@ -235,16 +279,24 @@ import Logo from './Logo.astro';
         .link:not(.home-link) {
             display: flex;
             padding: 0;
-            color: var(--background);
+            color: var(--foreground);
+            opacity: 0.9;
+        }
+
+        .home-link {
+            opacity: 0.9;
         }
         .search-toggle-block {
             display: flex;
         }
 
-        .link:hover,
+        .link:hover:not(.search-toggle-block),
         .link:active {
-            /* background-color: var(--foreground); */
+            padding: 0 .5rem;
+            background-color: var(--foreground);
+            border-radius: 9px;
             color: var(--background);
+            opacity: 1;
         }
     }
 </style>
