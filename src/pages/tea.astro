@@ -1,14 +1,14 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 import TeaCard from '../components/TeaCard.astro';
 
 const allTeas = await Astro.glob('../pages/teas/*.md');
 const pageTitle = "Наші чаї";
 ---
 
-<MainLayout {pageTitle}>
-	<h1 class="first-line last-line">{pageTitle}</h1>
+<ArticleLayout {pageTitle}>
+	<h1 class="last-line">{pageTitle}</h1>
 	<ul class="last-line">
 		{allTeas.map((tea) => <TeaCard url={tea.url} title={tea.frontmatter.title} />)}
 	</ul>
-</MainLayout>
+</ArticleLayout>

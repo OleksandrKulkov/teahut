@@ -3,13 +3,12 @@ import ImageSlider from '../components/ImageSlider.astro';
 import MainLayout from './MainLayout.astro';
 
 const { frontmatter } = Astro.props;
-const  containerMaxWidth = "900";
 ---
 <MainLayout pageTitle={frontmatter.title}>
-    <div class="information first-line">
+    <div class="information">
         <ImageSlider />
         <div class="text-information">
-            <div class="container">
+            <div class="header-container">
                 <h1 class="title">{frontmatter.title}</h1>
                 <p>{frontmatter.subtitle}</p>
             </div>
@@ -26,22 +25,23 @@ const  containerMaxWidth = "900";
         flex-direction: column;
     }
 
+    .header-container,
     .container {
         padding: 0 1rem;
     }
 
-    @media screen  and (min-width: 768px){
+    @media screen  and (min-width: 48rem){
         .information {
             flex-direction: row;
         }
         
         .text-information {
-            margin-left: 3rem;
+            /* margin-left: 3rem; */
         }
 
-        .container {
-        padding: 0;
-    }
+        .header-container { padding: 2rem 2rem 0;}
+
+        .container { padding: 2rem 4rem 0; }
 
         .title {
             margin: 1rem 0 2rem;
