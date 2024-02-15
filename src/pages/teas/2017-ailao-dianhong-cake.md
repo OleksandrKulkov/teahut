@@ -6,7 +6,7 @@ pubDate: 2023-09-07
 price: 2.4
 description: Гори Айлао; весна 2017 року.
 image: "./2017-ailao-dianhong-cake/1.jpg"
-category: ["Червоні чаї"]
+category: ["Hongcha"]
 tags: ["Червоні чаї", "Дяньхони", "Чаї з дерев"]
 slides: ['./2017-ailao-dianhong-cake/1.jpg', './2017-ailao-dianhong-cake/2.jpg', './2017-ailao-dianhong-cake/3.jpg', './2017-ailao-dianhong-cake/4.jpg', './2017-ailao-dianhong-cake/5.jpg']
 ---

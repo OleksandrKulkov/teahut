@@ -6,7 +6,7 @@ description: Високогоряний Шен пуер із Айлао; вес�
 pubDate: 2022-06-17
 price: 2.8
 image: "./2021-ailao-sheng/1.jpeg"
-category: ["Шен пуери"]
+category: ["Shengcha"]
 tags: ["Шен пуери", "Чаї з дерев"]
 slides: ['./2021-ailao-sheng/1.jpeg', './2021-ailao-sheng/2.jpeg', './2021-ailao-sheng/3.jpeg', './2021-ailao-sheng/4.jpeg', './2021-ailao-sheng/5.jpeg']
 ---

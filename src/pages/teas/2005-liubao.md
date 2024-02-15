@@ -7,7 +7,7 @@ pubDate: 2023-09-07
 price: 4.14
 image: './2005-liubao/1.jpg'
 imageTitle1: Любао 2005 року з Вуджов
-category: ["Чорні чаї"]
+category: ["Heicha"]
 tags: ["Хейча", "Витримані чаї"]
 slides: ['./2005-liubao/1.jpg', './2005-liubao/2.jpg', './2005-liubao/3.jpg', './2005-liubao/4.jpg', './2005-liubao/5.jpg']
 ---
