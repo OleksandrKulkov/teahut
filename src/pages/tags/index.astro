@@ -7,11 +7,14 @@ const pageTitle = "Позначки чаїв";
 ---
 
 <MainLayout {pageTitle}>
-    <div class="tags container">
-        {tags.map((tag) => (
-            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-        ))}
-    </div>
+  <div class="container">
+    <h1>{pageTitle}:</h1>
+      <div class="tags">
+          {tags.map((tag) => (
+              <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+          ))}
+      </div>
+  </div>
 </MainLayout>
 
 <style>
@@ -20,15 +23,17 @@ const pageTitle = "Позначки чаїв";
     }
   
     .tags {
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
   
     .tag {
       margin: 0.25em;
       border: dotted 1px #7c7c7c;
       border-radius: .5em;
-      padding: .2rem .5rem .1rem;
+      padding: .3rem .5rem .1rem;
       font-size: 1.1rem;
       background-color: var(--button);
     }
