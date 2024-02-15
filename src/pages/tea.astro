@@ -1,14 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import TeaCard from '../components/TeaCard.astro';
 
-const allTeas = await Astro.glob('../pages/teas/*.md');
+const allTeas = await getCollection("teas");
 const pageTitle = "Наші чаї";
 ---
 
 <ArticleLayout {pageTitle}>
 	<h1 class="last-line">{pageTitle}</h1>
 	<ul class="last-line">
-		{allTeas.map((tea) => <TeaCard url={tea.url} title={tea.frontmatter.title} />)}
+		{allTeas.map((tea) => (
+			<TeaCard url={`/teas/${tea.slug}/`} title={tea.data.title} />
+		))}
 	</ul>
 </ArticleLayout>
