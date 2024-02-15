@@ -5,10 +5,15 @@ const pageTitle = "Пошук"
 ---
 
 <MainLayout {pageTitle}>
-	<h1>{pageTitle}</h1>
-
+	<div class="container">
+		<h1>{pageTitle}</h1>
+	</div>
 </MainLayout>
 
 <style>
-	
+	.container { padding: 3rem 1rem 1rem; }
+
+	@media(min-width: 48rem) {
+		.container { padding: 3rem 4rem 1rem; }
+	}
 </style>

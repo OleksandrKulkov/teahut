@@ -11,7 +11,7 @@ const { frontmatter } = Astro.props;
             <div class="header-container">
                 <h1 class="title">{frontmatter.title}</h1>
                 <p>{frontmatter.subtitle}</p>
-                <div class="tags">
+                <div class="tags last-line">
                     {frontmatter.tags.map((tag: unknown) => (
                       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
                     ))}
