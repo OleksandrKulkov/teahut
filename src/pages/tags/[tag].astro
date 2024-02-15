@@ -1,0 +1,38 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TeaCard from '../../components/TeaCard.astro';
+
+export async function getStaticPaths() {
+  const allTeas = await Astro.glob('../teas/*.md');
+
+  const uniqueTags = [...new Set(allTeas.map((tea) => tea.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredTeas = allTeas.filter((tea) => tea.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { teas: filteredTeas },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { teas } = Astro.props;
+---
+
+<MainLayout pageTitle={tag}>
+  <div class="container">
+    <h3>Чаї, позначені як "{tag}":</h3>
+    <ul>
+      {teas.map((tea) => <TeaCard url={tea.url} title={tea.frontmatter.title}/>)}
+    </ul>
+  </div>
+</MainLayout>
+
+<style>
+  .container { padding: 3rem 1rem 1rem; }
+
+  @media(min-width: 48rem) {
+    .container { padding: 3rem 4rem 1rem; }
+  }
+</style>

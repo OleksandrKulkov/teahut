@@ -298,5 +298,13 @@ import Logo from './Logo.astro';
             color: var(--background);
             opacity: 1;
         }
+
+        :global(.dark) .link:hover:not(.search-toggle-block),
+        :global(.dark) .link:active {
+        color: #a38017;
+        border: solid 1px var(--foreground-dark);
+        background-color: unset;
+        opacity: 1;
+    }
     }
 </style>

@@ -1,0 +1,45 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const allTeas = await Astro.glob('../teas/*.md');
+const tags = [...new Set(allTeas.map((tea) => tea.frontmatter.tags).flat())];
+const pageTitle = "Позначки чаїв";
+---
+
+<MainLayout {pageTitle}>
+    <div class="tags container">
+        {tags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
+</MainLayout>
+
+<style>
+    a {
+      color: var(--foreground);
+    }
+  
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .tag {
+      margin: 0.25em;
+      border: dotted 1px #7c7c7c;
+      border-radius: .5em;
+      padding: .2rem .5rem .1rem;
+      font-size: 1.1rem;
+      background-color: var(--button);
+    }
+
+    .tag:hover {
+      background-color: #a38017;
+    }
+
+    .container { padding: 3rem 1rem 1rem; }
+
+    @media(min-width: 48rem) {
+      .container { padding: 3rem 4rem 1rem; }
+    }
+</style>

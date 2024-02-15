@@ -11,6 +11,11 @@ const { frontmatter } = Astro.props;
             <div class="header-container">
                 <h1 class="title">{frontmatter.title}</h1>
                 <p>{frontmatter.subtitle}</p>
+                <div class="tags">
+                    {frontmatter.tags.map((tag) => (
+                      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                    ))}
+                </div>
             </div>
         </div>
     </div>
@@ -31,9 +36,30 @@ const { frontmatter } = Astro.props;
     }
 
     .title {
-            text-align: center;
-        }
+        text-align: center;
+    }
 
+    a {
+        color: var(--foreground);
+    }
+  
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+  
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #7c7c7c;
+        border-radius: .5em;
+        padding: .2rem .5rem .1rem;
+        font-size: 1.1rem;
+        background-color: var(--button);
+    }
+
+    .tag:hover {
+        background-color: #a38017;
+    }
     @media screen  and (min-width: 48rem){
         .information {
             flex-direction: row;
