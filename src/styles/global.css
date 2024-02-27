@@ -22,6 +22,7 @@
 html,
 body {
     font-family: "Just Another Hand", cursive, "Inter", sans-serif;
+    font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     background-color: var(--background);
     color: rgb(var(--foreground));
@@ -35,7 +36,6 @@ html.dark {
 }
 
 body {
-    font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     width: 100%;
     min-width: 320px;
     max-width: 135ch;
