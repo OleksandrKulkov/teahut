@@ -219,14 +219,18 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 	#image5:checked ~ .five 
 	{z-index: 9; animation: scroll 1s ease-in-out;}
 	
-	
+	@media (orientation: landscape;){
+		.slider {
+			max-height: 90dvh;
+		}
+	}
 	
 	@media screen  and (min-width: 48rem){
 		.slider {
 			margin: 3rem 0 3rem 2rem;
 			display: grid;
-			grid-template-columns: repeat(5, 16vh);
-			grid-template-rows: repeat(6, 16vh);
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(6, 16fr);
         }
 		
 		.wrapper {
@@ -243,7 +247,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 		
 		#nav-slides {
 			position: absolute;
-			grid-column: 1 / span 5;
+			grid-column: 1 / 6;
 			grid-row: 6 / 7;
 			display: flex;
 			padding: 0;
