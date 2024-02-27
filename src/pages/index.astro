@@ -18,9 +18,120 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 </ArticleLayout>
 
 <style>
-	h1,
-	h2,
-	h3 {
-		text-align: center;
+	h1, h2, h3 { text-align: center; }
+
+	.teaInformation {
+		margin-bottom: 18vw;
+	}
+
+	.grigContainer {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 2fr 0.5fr;
+		grid-template-areas: 
+		"slider information"
+		"sliderNav information"
+		;
+	}
+
+	.slider {
+		width: 100%;
+		
+	}
+
+	.slides {
+		height: inherit;
+	}
+
+	.cover { object-fit: cover; }
+
+	.wrapper {
+		position: relative;
+		max-height: 80dvh;
+		aspect-ratio: 1/1;
+		margin: 1.5rem 0 5vw;
+		background: var(--background);
+	}
+
+	:global(.dark) .wrapper { background: #22201c; }
+	
+	.slides {
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+		width: 100%;
+		aspect-ratio: 1/1;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		gap: 1rem;
+		-webkit-overflow-scrolling: touch;
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+	.slider .slides::-webkit-scrollbar { display: none; }
+	
+	.slider .slides {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	
+	.slider .slide {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+
+	.radio {
+		position: absolute;
+		bottom: 50px;
+		opacity: 0.01;
+	}
+
+	#image1,
+	#image2,
+	#image3,
+	#image4,
+	#image5 { accent-color: grey; }
+
+	.gridItem {
+		display: flex;
+	}
+
+	#nav-slides {
+		position: absolute;
+		left: 50%;
+		bottom: -12vw;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 3vw;
+	}
+
+	.dots {
+        /* pointer-events: none; */
+		width: 7vw;
+		height: 7vw;
+		border-radius: 50%;
+		overflow: hidden;
+		opacity: 0.7;
+		filter: saturate(0.5);
+		transition: opacity ease 250ms;
+		box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+	.dots img{
+		width: 100%;
+		object-fit: cover;
+	}
+
+	@media screen  and (min-width: 48rem){
+		.slider {
+			max-height: 80dvh;
+			aspect-ratio: 1/1;
+		
+		}
 	}
 </style>

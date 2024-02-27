@@ -6,14 +6,14 @@ import Logo from './Logo.astro';
 ---
 
 <nav class="navigation" aria-label="Primary">
-    <a class="header-logo" href="/" aria-label="To Home">
+    <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
         <Logo />
     </a>
-    <a class="home-link link" href="/" aria-label="To Home">Чайна Хатинка</a>
-    <a class="teas-link link" href="/tea/" aria-label="To Our Tea">Наші чаї</a>
-    <a class="library-link link" href="/about/" aria-label="To About">Про нас</a>
+    <a class="home-link link" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
+    <a class="teas-link link" href="/teas/" aria-label="To Our Tea" data-astro-prefetch>Наші чаї</a>
+    <a class="library-link link" href="/about/" aria-label="To About" data-astro-prefetch>Про нас</a>
     <div class="search-toggle-block link">
-        <a class="search-link icon" href="/search/" aria-label="До Пошуку">
+        <a class="search-link icon" href="/search/" aria-label="До Пошуку" data-astro-prefetch>
             <Icon name="search" size={24} />
         </a>
         <div class="toggle">
@@ -286,6 +286,7 @@ import Logo from './Logo.astro';
         .home-link {
             opacity: 0.9;
         }
+        
         .search-toggle-block {
             display: flex;
         }
@@ -301,10 +302,10 @@ import Logo from './Logo.astro';
 
         :global(.dark) .link:hover:not(.search-toggle-block),
         :global(.dark) .link:active {
-        color: #a38017;
-        border: solid 1px var(--foreground-dark);
-        background-color: unset;
-        opacity: 1;
-    }
+            color: #a38017;
+            border: solid 1px var(--foreground-dark);
+            background-color: unset;
+            opacity: 1;
+        }
     }
 </style>
