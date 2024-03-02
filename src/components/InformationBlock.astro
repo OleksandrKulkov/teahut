@@ -1,0 +1,111 @@
+---
+import ImageSlider from "./ImageSlider.astro";
+import {converNumberToHrivna, exchangePrice} from "../utils/utils";
+
+const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt, image4alt, image5alt, title, subtitle, price, tags } = Astro.props;
+---
+
+<div class="container">
+    <div class="slider">
+        <ImageSlider
+            image1={image1}
+            image2={image2}
+            image3={image3}
+            image4={image4}
+            image5={image5}
+            image1alt={image1alt}
+            image2alt={image2alt}
+            image3alt={image3alt}
+            image4alt={image4alt}
+            image5alt={image5alt}
+        />
+    </div>
+        <div class="textInformation"> 
+            <div class="headerContainer">
+                <h1 class="title">{title}</h1>
+                <p>{subtitle}</p>
+                <p>Орієнтовно за 10 гр: <span class="price">{exchangePrice(price)}</span> грн.</p>
+                <div class="tags last-line">
+                    {tags.map((tag: unknown) => (
+                      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                    ))}
+                </div>
+            </div>
+        </div>
+</div>
+
+<style>
+    .information {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .slider {
+        max-height: 95vh;
+        height: 100%;
+    } */
+
+    .headerContainer { padding: 1rem; }
+
+    .title { text-align: center; }
+
+    .price {
+        padding-left: 1rem;
+        font-size: larger;
+        font-weight: 600;
+        color: rgb(0, 153, 33);
+
+    }
+
+    a { color: var(--foreground); }
+  
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #7c7c7c;
+        border-radius: .5em;
+        padding: .3rem .5rem .1rem;
+        font-size: 1.1rem;
+        background-color: var(--button);
+    }
+
+    .tag:hover {
+        background-color: #a38017;
+    }
+
+    @media screen  and (min-width: 48rem){
+        .container {
+            margin: 2rem 2rem 3rem;
+            display: grid;
+            grid-template-columns: 1.6fr 1.4fr;
+            grid-template-rows: 95dvh;
+        }
+
+        .slider {
+            max-height: 95vh;
+            height: 100%;
+            width: 100%
+            margin: 0 auto;
+            /* grid-column: auto;
+            grid-row: 1fr; */
+        }
+        .textInformation {
+            grid-column: 2/3;
+            grid-row: auto;
+            padding: 0;
+        }
+
+        .information { flex-direction: row; }
+
+        .headerContainer {
+            padding: 1rem 0 0 2rem;
+        }
+
+        .title { margin: 0 0 2rem; }
+    }
+</style>

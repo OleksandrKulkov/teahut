@@ -1,13 +1,12 @@
 ---
-import ImageSlider from '../components/ImageSlider.astro';
+import InformationBlock from '../components/InformationBlock.astro';
 import MainLayout from './MainLayout.astro';
 import {converNumberToHrivna, exchangePrice} from "../utils/utils";
 
 const { frontmatter } = Astro.props;
 ---
 <MainLayout pageTitle={frontmatter.title}>
-    <div class="information">
-        <ImageSlider
+        <InformationBlock
             image1={frontmatter.image1}
             image2={frontmatter.image2}
             image3={frontmatter.image3}
@@ -18,81 +17,18 @@ const { frontmatter } = Astro.props;
             image3alt={frontmatter.image3alt}
             image4alt={frontmatter.image4alt}
             image5alt={frontmatter.image5alt}
+            title={frontmatter.title}
+            subtitle={frontmatter.subtitle}
+            price={frontmatter.price}
+            tags={frontmatter.tags}
         />
-        <div class="text-information"> 
-            <div class="header-container">
-                <h1 class="title">{frontmatter.title}</h1>
-                <p>{frontmatter.subtitle}</p>
-                <p>Орієнтовно за 10 гр: <span class="price">{exchangePrice(frontmatter.price)}</span> грн.</p>
-                <div class="tags last-line">
-                    {frontmatter.tags.map((tag: unknown) => (
-                      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-                    ))}
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <slot />
     </div>
 </MainLayout>
 
 <style>
-    .information {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .header-container,
-    .container {
-        padding: 0 1rem;
-    }
-
-    .title {
-        text-align: center;
-    }
-
-    .price {
-        padding-left: 1rem;
-        font-size: larger;
-        font-weight: 600;
-        color: rgb(0, 153, 33);
-
-    }
-
-    a {
-        color: var(--foreground);
-    }
-  
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-  
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #7c7c7c;
-        border-radius: .5em;
-        padding: .3rem .5rem .1rem;
-        font-size: 1.1rem;
-        background-color: var(--button);
-    }
-
-    .tag:hover {
-        background-color: #a38017;
-    }
     @media screen  and (min-width: 48rem){
-        .information {
-            flex-direction: row;
-        }
-
-        .header-container { padding: 2rem 2rem 0;}
-
         .container { padding: 2rem 4rem 0; }
-
-        .title {
-            margin: 1rem 0 2rem;
-        }
     }
 </style>
