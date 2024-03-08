@@ -77,17 +77,17 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         }
 
         .gallery {
-        position: relative;
-        max-width: 360px;
-        width: 100%;
-        height: 451.25px;
+            position: relative;
+            max-width: 480px;
+            width: 100%;
+            height: 563.75px;
 
         &:hover :not(div[data-pos='0'],img) { cursor: pointer; }
         
         & .item {
             position: absolute;
-            width: 86.25px;
-            height: 86.25px;
+            width: 108.75px;
+            height: 108.75px;
             border-radius: .5rem;
             overflow: hidden;
             transition: transform 0.5s, width 0.5s, height 0.5s;
@@ -100,23 +100,56 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         
         & div[data-pos='0'] { 
       border-radius: 1rem;
-    width: 360px;
-    height: 360px;
+    width: 450px;
+    height: 450px;
     z-index: 10;
   }
 }
 
 div[data-pos='0'] { transform: translate(0,0); }
-div[data-pos='1'] { transform: translate(0,365px); }
-div[data-pos='2'] { transform: translate(91.25px,365px); }
-div[data-pos='3'] { transform: translate(182.5px,365px); }
-div[data-pos='4'] { transform: translate(274px,365px); }
+div[data-pos='1'] { transform: translate(0,455px); }
+div[data-pos='2'] { transform: translate(113.75px,455px); }
+div[data-pos='3'] { transform: translate(227.5px,455px); }
+div[data-pos='4'] { transform: translate(341.25px,455px); }
 }
 
     @media screen  and (min-width: 48rem){
         .body {
-            justify-items: start;
+            width: 100%;
+            height: 100%;
+            /* justify-items: start; */
         }
+
+        .gallery {
+        /* position: relative; */
+        width: 100%;
+        height: 125%;
+    
+        & .item {
+            position: absolute;
+            width: 23.5%;
+            height: 23.5%;
+            overflow: hidden;
+            transition: transform 0.6s, width 0.6s, height 0.6s;
+            
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        & div[data-pos='0'] {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+
+    div[data-pos='0'] { transform: translate(0,0); }
+    div[data-pos='1'] { transform: translate(0, 102%); }
+    div[data-pos='2'] { transform: translate(25.5%, 102%); }
+    div[data-pos='3'] { transform: translate(51%,102%); }
+    div[data-pos='4'] { transform: translate(76.5%,102%); }
     }
 
 </style>
