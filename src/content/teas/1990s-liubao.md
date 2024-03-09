@@ -4,7 +4,7 @@ subtitle: Чайна мануфактура "Вуджов Джон Ча"
 description: Витриманий Любао з Вуджов початку 1990-х, Ґвансі.
 region: Вуджов, Ґвансі
 variety: дерева Любао
-yield: початок 1990-х
+yieldYear: початок 1990-х
 pubDate: 2024-02-27
 price: 7.81
 image: "/src/assets/teas/1990s-liubao/1990s-liubao.jpg"

@@ -8,7 +8,7 @@ const teas = defineCollection({
       description: z.string(),
       region: z.string(),
       variety: z.string(),
-      yield: z.string(),
+      yieldYear: z.string(),
       aging: z.string().optional(),
       pubDate: z
         .string()

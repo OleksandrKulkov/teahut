@@ -1,10 +1,10 @@
 ---
 title: Млинець Дяньхона з Айлао
-subtitle: Юньнань, Китай; весна 2017 року
+subtitle: Червоний чай із Юньнані
 description: Гори Айлао; весна 2017 року.
 region: гори Айлао, Юньнань
-variety: давні дикі чайні дерева, яким більше 100 років
-yield: весна 2017 року
+variety: вікові дикі пуерні дерева
+yieldYear: весна 2017 року
 pubDate: 2023-09-07
 price: 2.5
 image: "/src/assets/teas/2017-ailao-dianhong-cake/2017-ailao-dianhong.jpg"

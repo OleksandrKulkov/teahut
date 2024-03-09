@@ -1,10 +1,10 @@
 ---
 title: '"Лісовий чай із Ґвансі"'
-subtitle: Любао 2005 року з Вуджов
+subtitle: Дикий Любао з Вуджов
 description: Любао 2005 року з листя диких дерев із Вуджов, Ґвансі.
 region: Вуджов, Ґвансі
 variety: дикі дерева Любао
-yield: 2005 рік
+yieldYear: 2005 рік
 pubDate: 2023-09-07
 price: 4.83
 image: "/src/assets/teas/2005-liubao/2005-liubao.webp"

@@ -1,7 +1,6 @@
 ---
 import InformationBlock from '../components/InformationBlock.astro';
 import MainLayout from './MainLayout.astro';
-import {converNumberToHrivna, exchangePrice} from "../utils/utils";
 
 const { frontmatter } = Astro.props;
 ---
@@ -19,6 +18,9 @@ const { frontmatter } = Astro.props;
             image5alt={frontmatter.image5alt}
             title={frontmatter.title}
             subtitle={frontmatter.subtitle}
+            region={frontmatter.region}
+            yieldYear={frontmatter.yieldYear}
+            variety={frontmatter.variety}
             price={frontmatter.price}
             tags={frontmatter.tags}
         />

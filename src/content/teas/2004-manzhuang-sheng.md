@@ -1,10 +1,10 @@
 ---
 title: Давні дерева Маньджуан
-subtitle: Шен пуер 2004 року
+subtitle: Витриманий Шен пуер
 description: Витриманий Шен пуер із Маньджуан 2004 року, Юньнань.
 region: гори Маньджуан, Юньнань
-variety: давні чайні дерева, яким більше 100 років
-yield: 2004 рік
+variety: вікові пуерні дерева
+yieldYear: 2004 рік
 pubDate: 2024-02-26
 price: 6.78
 image: "/src/assets/teas/2004-manzhuang-sheng/2004-manzhuang-sheng.jpg"

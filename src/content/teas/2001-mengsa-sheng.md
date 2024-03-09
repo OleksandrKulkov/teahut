@@ -1,10 +1,10 @@
 ---
 title: Чай із давніх дерев Менса
-subtitle: Шен пуер 2001 року
+subtitle: Витриманий Шен пуер
 description: Витриманий Шен пуер із Менса 2001 року, Юньнань.
 region: гори Менса, Юньнань
-variety: давні чайні дерева, яким більше 100 років
-yield: 2001 рік
+variety: вікові пуерні дерева
+yieldYear: 2001 рік
 pubDate: 2024-02-26
 price: 8.62
 image: "/src/assets/teas/2001-mengsa-sheng/2001-mengsa-sheng.jpg"
