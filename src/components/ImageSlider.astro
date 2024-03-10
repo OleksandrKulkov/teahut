@@ -315,8 +315,8 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 			threshold: 0.6
 		});
 
-		function onIntersectionObserved(entries: any[]) {
-			entries.forEach((entry: { isIntersecting: any; intersectionRatio: number; target: Element; }) => {
+		function onIntersectionObserved(entries) {
+			entries.forEach(entry => {
 				if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
 					const intersectingIndex = items.indexOf(entry.target);
 					activateIndicator(intersectingIndex);
@@ -324,12 +324,14 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 			});
 		}
 
-		function activateIndicator(index: number) {
-			indicators.forEach((indicator, i) => {
-				indicator.classList.toggle("active", i === index);
-			});
+		function activateIndicator(index) {
+  			indicators.forEach((indicator, i) => {
+    			indicator.classList.toggle("active", i === index);
+  			});
 		}
 
-		items.forEach(item => observer.observe(item));
+		items.forEach(item => {
+  			observer.observe(item);
+		});
 	});
 </script>
