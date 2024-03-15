@@ -6,9 +6,9 @@ const { image, imageAlt, category, title, url } = Astro.props;
 
 <article>
     <a href={url} data-astro-prefetch>
-        <Image 
+        <Image
             src={image} 
-            alt={imageAlt}
+            alt=""
             class="teaImage" 
         />
         <h2>{title}</h2>
