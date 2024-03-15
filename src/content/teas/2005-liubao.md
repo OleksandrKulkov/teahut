@@ -9,17 +9,17 @@ yieldYear: 2005 рік
 pubDate: 2023-09-07
 price: 4.83
 image: "/src/assets/teas/2005-liubao/2005-liubao.webp"
-imageAlt: "Любао 2005 року з Вуджов"
+imageAlt: Любао 2005 року з Вуджов
 image1: "/src/assets/teas/2005-liubao/slide1.jpg"
-image1alt: "Любао 2005 року з Вуджов"
+image1alt: Любао 2005 року з Вуджов
 image2: "/src/assets/teas/2005-liubao/slide2.jpg"
-image2alt: "Чудове листя з диких кущів"
+image2alt: Чудове листя з диких кущів
 image3: "/src/assets/teas/2005-liubao/slide3.jpg"
-image3alt: "Перша чашка"
+image3alt: Перша чашка
 image4: "/src/assets/teas/2005-liubao/slide4.jpg"
-image4alt: "Десята чашка"
+image4alt: Десята чашка
 image5: "/src/assets/teas/2005-liubao/slide5.jpg"
-image5alt: "Спите листя (чайне дно)"
+image5alt: Спите листя (чайне дно)
 category: ["heicha"]
 tags: ["Любао","Хейча", "Витримані чаї", "Чаї з дерев"]
 ---

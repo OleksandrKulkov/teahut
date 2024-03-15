@@ -9,17 +9,17 @@ yieldYear: початок 1990-х
 pubDate: 2024-02-27
 price: 7.81
 image: "/src/assets/teas/1990s-liubao/1990s-liubao.jpg"
-imageAlt: "Любао початку 1990-х з Вуджов"
+imageAlt: Любао початку 1990-х з Вуджов
 image1: "/src/assets/teas/1990s-liubao/slide1.jpg"
-image1alt: "Любао з 1990-х"
+image1alt: Любао з 1990-х
 image2: "/src/assets/teas/1990s-liubao/slide2.jpg"
-image2alt: "Листю вже більше 30 років"
+image2alt: Листю вже більше 30 років
 image3: "/src/assets/teas/1990s-liubao/slide3.jpg"
-image3alt: "Колір настою першої чашки"
+image3alt: Колір настою першої чашки
 image4: "/src/assets/teas/1990s-liubao/slide4.jpg"
-image4alt: "Колір настою, десята чашка"
+image4alt: Колір настою, десята чашка
 image5: "/src/assets/teas/1990s-liubao/slide5.jpg"
-image5alt: "Спите листя"
+image5alt: Спите листя
 category: ["heicha"]
 tags: ["Любао", "Хейча", "Витримані чаї", "Чаї з дерев"]
 ---

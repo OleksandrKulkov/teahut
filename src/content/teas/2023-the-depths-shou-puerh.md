@@ -9,17 +9,17 @@ yieldYear: 2023 рік
 pubDate: 2024-01-14
 price: 3.8
 image: "/src/assets/teas/2023-the-depths-shou/2023-the-depths-shou.jpg"
-imageAlt: "Глибини, Шу пуер 2023-го"
+imageAlt: Глибини, Шу пуер 2023-го
 image1: "/src/assets/teas/2023-the-depths-shou/slide1.jpg"
 image1alt: '"Глибини"'
 image2: "/src/assets/teas/2023-the-depths-shou/slide2.jpg"
-image2alt: "Шу пуер з Фенціну 2023-го"
+image2alt: Шу пуер з Фенціну 2023-го
 image3: "/src/assets/teas/2023-the-depths-shou/slide3.jpg"
-image3alt: "Перша чашка"
+image3alt: Перша чашка
 image4: "/src/assets/teas/2023-the-depths-shou/slide4.jpg"
-image4alt: "Десята чашка"
+image4alt: Десята чашка
 image5: "/src/assets/teas/2023-the-depths-shou/slide5.jpg"
-image5alt: "Спите листя"
+image5alt: Спите листя
 category: ["heicha"]
 tags: ["Шу пуери", "Хейча", "Чаї з дерев"]
 ---

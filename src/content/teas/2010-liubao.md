@@ -9,17 +9,17 @@ yieldYear: 2010 рік
 pubDate: 2024-03-10
 price: 2.1
 image: "/src/assets/teas/2010-liubao/2010-liubao.jpg"
-imageAlt: "Любао 2010 року з Вуджов"
+imageAlt: Любао 2010 року з Вуджов
 image1: "/src/assets/teas/2010-liubao/slide1.jpg"
-image1alt: "Нетиповий Любао з Вуджов"
+image1alt: Нетиповий Любао з Вуджов
 image2: "/src/assets/teas/2010-liubao/slide2.jpg"
-image2alt: "Листя ще доволі грайливе"
+image2alt: Листя ще доволі грайливе
 image3: "/src/assets/teas/2010-liubao/slide3.jpg"
-image3alt: "Колір настою першої чашки"
+image3alt: Колір настою першої чашки
 image4: "/src/assets/teas/2010-liubao/slide4.jpg"
-image4alt: "Десята чашка"
+image4alt: Десята чашка
 image5: "/src/assets/teas/2010-liubao/slide5.jpg"
-image5alt: "Спите листя"
+image5alt: Спите листя
 category: ["heicha"]
 tags: ["Любао", "Хейча", "Витримані чаї", "Чаї з дерев"]
 ---

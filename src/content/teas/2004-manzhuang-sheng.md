@@ -9,17 +9,17 @@ yieldYear: 2004 рік
 pubDate: 2024-02-26
 price: 6.78
 image: "/src/assets/teas/2004-manzhuang-sheng/2004-manzhuang-sheng.jpg"
-imageAlt: "Шен пуер 2001 року з Менса"
+imageAlt: Шен пуер 2001 року з Менса
 image1: "/src/assets/teas/2004-manzhuang-sheng/slide1.jpg"
-image1alt: "Давні дерева Маньджуан"
+image1alt: Давні дерева Маньджуан
 image2: "/src/assets/teas/2004-manzhuang-sheng/slide2.jpg"
-image2alt: "Листя доволі сильно спресоване"
+image2alt: Листя доволі сильно спресоване
 image3: "/src/assets/teas/2004-manzhuang-sheng/slide3.jpg"
-image3alt: "Настій у першій чашці"
+image3alt: Настій у першій чашці
 image4: "/src/assets/teas/2004-manzhuang-sheng/slide4.jpg"
-image4alt: "Десята чашка"
+image4alt: Десята чашка
 image5: "/src/assets/teas/2004-manzhuang-sheng/slide5.jpg"
-image5alt: "Спите листя (чайне дно)"
+image5alt: Спите листя (чайне дно)
 category: ["shengcha"]
 tags: ["Шен пуери", "Витримані чаї", "Чаї з дерев"]
 ---
