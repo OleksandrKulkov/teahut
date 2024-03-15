@@ -1,17 +1,306 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleLayout from '../layouts/ArticleLayout.astro';
-import TeaCard from '../components/TeaCard.astro';
+import { Image } from "astro:assets";
+import {exchangePrice} from "../utils/utils";
 
-const allTeas = await getCollection("teas");
 const pageTitle = "Наші чаї";
+const allTeas = (await getCollection('teas')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <ArticleLayout {pageTitle}>
-	<h1 class="last-line">{pageTitle}:</h1>
-	<ul class="last-line">
-		{allTeas.map((tea) => (
-			<TeaCard url={`/teas/${tea.slug}/`} title={tea.data.title} />
-		))}
-	</ul>
+	<section>
+		<h1 class="last-line">{pageTitle}:</h1>
+		<form>
+			<div><p>Відфільтрувати за категоріями:</p></div>
+			<div class="boxes">
+				<label>
+					<input type="checkbox" name="shengcha" checked />
+					Шени
+				</label>
+				<label>
+					<input type="checkbox" name="heicha" checked />
+					Чорні та Шу
+				</label>
+				<label>
+					<input type="checkbox" name="hongcha" checked />
+					Червоні
+				</label>
+				<label>
+					<input type="checkbox" name="baicha&lucha" checked />
+					Білі й Зелені
+				</label>
+			</div>
+		</form>
+		<div class="teaBlock">
+			{allTeas.map((tea) => (
+				<article>
+					<p class="categories" data-category={tea.data.category}></p>
+					<div class="container">
+						<a href={`/teas/${tea.slug}/`} data-astro-prefetch>
+							<figure class="tea">
+								<Image 
+									src={tea.data.image} 
+									alt=""
+									class="teaImage" 
+								/>
+								<figcaption>
+									<h2>{tea.data.title}</h2>
+									<p>{tea.data.description}</p>
+								</figcaption>
+							</figure>
+						</a>
+						<div class="categoryAndPrice">
+							<div class="priceBlock">
+								<p class="priceRow">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
+							</div>
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
 </ArticleLayout>
+
+<style>
+	section .teaBlock {
+		/* block-size: 90cqw; */
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+		/* grid-template-columns: repeat(3, min(200px, 33% - 1.5rem)); */
+		place-content: start center;
+		margin-bottom: 2rem;
+	}
+
+	.teaBlock article {
+		width: 100%;
+		/* box-shadow: var(--box-shadow); */
+		/* text-align: center; */
+	}
+
+	.teaBlock article:first-child {
+		margin-bottom: 0;
+	}
+	
+	.teaBlock article:first-child figcaption h2 {
+		font-size: 1.5em;
+	}
+
+	/* article:nth-child(even) {
+		background-color: #c7b5b5;
+	}
+	
+	article:nth-child(odd) {
+		background-color: #e6e6e6;
+	} */
+
+	form {
+		display: flex;
+		flex-direction: column;
+		background: var(--button);
+		border-radius: .8rem;
+		font-size: 1rem;
+		/* color: oklch(0.24 0.06 73.94); */
+		margin-block-end: 2rem;
+		justify-content: center;
+		padding: 1rem;
+		/* box-shadow: var(--box-shadow); */
+	}
+	
+	:global(.dark) form {
+		border: 1px solid oklch(99.62% 0.2 146.51);
+		background: unset;
+	}
+	
+	form p {
+		line-height: 1;
+		margin-bottom: .7rem;
+	}
+	
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+
+	}
+	
+	label,
+	input {
+		align-items: baseline;
+		color: inherit;
+		font-size: 1rem;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+	}
+	
+	input {
+		block-size: 1rem;
+		inline-size: 1rem;
+		position: relative;
+		inset-block-start: 0.125rem;
+	}
+
+	section:has([name="shengcha"]:checked) article:has([data-category="shengcha"]) {
+		display: block;
+	}
+
+	section:has([name="heicha"]:checked) article:has([data-category="heicha"]) {
+		display: block;
+	}
+
+	section:has([name="hongcha"]:checked)
+		article:has([data-category="hongcha"]) {
+		display: block;
+	}
+
+	section:has([name="baicha&lucha"]:checked)
+		article:has([data-category="baicha&lucha"]) {
+		display: block;
+	}
+
+
+	article {
+		container-type: inline-size;
+		display: none;
+		margin: 0;
+	}
+
+	.teaImage {
+		aspect-ratio: 2 / 1;
+		border-radius: 0.9rem;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin-bottom: 1em;
+	}
+
+	figcaption h2 {
+		/* color: oklch(0.24 0.06 73.94); */
+		font-size: clamp(0.75rem, 9cqw, 1.2rem);
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		line-height: 1.1;
+		margin: clamp(0.125rem, 2cqw, 0.375rem) 0;
+		text-align: center;
+	}
+
+	figcaption p {
+		color: oklch(57.18% 0.093 108.52);
+		font-size: 1rem;
+		/* margin-bottom: 0; */
+		text-align: center;
+	}
+
+	.categoryAndPrice {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.priceBlock {
+		padding: 0 1.5rem;
+		display: flex;
+		/* grid-template-columns: 70% 25%; */
+		justify-content: space-between;
+		align-items: center
+	}
+
+	.priceRow {
+		margin-bottom: unset;
+	}
+
+	.price {
+        padding-left: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgb(0, 153, 33);
+    }
+
+	article .categories {
+		/* background: oklch(96% 0.05 var(--hue)); */
+		/* border: 1px solid oklch(93% 0.1 var(--hue)); */
+		color: oklch(35% 0.104 var(--hue));
+		border-radius: 0.25rem;
+		display: block;
+		font-size: clamp(0.5rem, 5.5cqw, 0.825rem);
+		letter-spacing: 0.15em;
+		line-height: 1;
+		margin: 0;
+		padding: clamp(0.125rem, 2cqw, 0.25rem);
+		font-variant: small-caps;
+		text-align: center;
+	}
+
+	article .categories::after {
+		content: attr(data-category);
+	}
+
+
+
+	article .container{
+		/* color code by category */
+		border-radius: 0.9rem;
+		--hue: 0;
+		border: 1px solid oklch(93% 0.1 var(--hue));
+	}
+
+	article:has([data-category="shengcha"]) .container {
+		--hue: 112.44;
+	}
+
+	article:has([data-category="heicha"]) .container {
+		--hue: 96.5;
+	}
+
+	article:has([data-category="hongcha"]) .container {
+		--hue: 50.61;
+	}
+
+	article:has([data-category="baicha&lucha"]) .container {
+		--hue: 146.65;
+	}
+
+	article:has([data-category="wulong"]) .container {
+		--hue: 167.82;
+	}
+
+	article .categories {
+		/* background: oklch(96% 0.05 var(--hue));
+		border: 1px solid oklch(93% 0.1 var(--hue)); */
+		color: oklch(60% 0.104 var(--hue));
+	}
+
+	@media(min-width: 48rem) {
+		section .teaBlock {
+			gap: 2rem;
+			justify-content: space-between;
+		}
+
+		.teaBlock article { width: calc(50% - 1rem); }
+
+		.teaBlock article * { transition: 0.2s ease; }
+
+		.teaBlock article:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+		
+		.teaBlock article:first-child img { width: 100%; }
+
+		.teaBlock article:first-child .title {
+			font-size: 2rem;
+		}
+
+		.boxes {
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+	}
+</style>

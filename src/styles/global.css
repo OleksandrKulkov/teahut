@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 
 :root {
-    --background: rgb(242, 232, 189);
-    --foreground: rgb(39, 33, 9);
-    --background-dark: rgb(34, 32, 28);
-    --foreground-dark: rgb(196, 189, 160);
-    --header: rgb(34, 29, 7);
-    --footer: rgb(26, 22, 5);
-    --button: rgb(170, 170, 99);
+    --background: oklch(92.82% 0.057 96.44);
+    --foreground: oklch(24.84% 0.039 95.36);
+    --background-dark: oklch(24.43% 0.008 84.59);
+    --foreground-dark: oklch(79.64% 0.04 95.94);
+    --header: oklch(23.07% 0.037 96.74);
+    --footer: oklch(20% 0.031 96.93);
+    --button: oklch(72.18% 0.093 108.52 / 52%);
     --active: rgb(163, 128, 23);
+    --gray: 102, 101, 97;
+    --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
 }
 
 *,

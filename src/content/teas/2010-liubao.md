@@ -1,7 +1,8 @@
 ---
+posted: true
 title: Любао 2010 року
 subtitle: Незвичний чай із Ґвансі
-description: Незвичний Любао з Вуджов 2010 року, Ґвансі.
+description: Нетиповий Любао з Вуджов, Ґвансі; 2010 рік.
 region: Вуджов, Ґвансі
 variety: дерева Любао
 yieldYear: 2010 рік
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/2010-liubao/slide4.jpg"
 image4alt: "Десята чашка"
 image5: "/src/assets/teas/2010-liubao/slide5.jpg"
 image5alt: "Спите листя"
-category: ["Heicha"]
+category: ["heicha"]
 tags: ["Любао", "Хейча", "Витримані чаї", "Чаї з дерев"]
 ---
 

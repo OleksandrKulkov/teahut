@@ -1,7 +1,8 @@
 ---
+posted: true
 title: '"Глибини"'
 subtitle: Млинець Шу пуера
-description: Незвичний Любао з Вуджов 2010 року, Ґвансі.
+description: Шу пуер з Фенціну, Юньнань; 2023 рік.
 region: Фенцін, Юньнань
 variety: Пуерні дерева з трьох районів
 yieldYear: 2023 рік
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/2023-the-depths-shou/slide4.jpg"
 image4alt: "Десята чашка"
 image5: "/src/assets/teas/2023-the-depths-shou/slide5.jpg"
 image5alt: "Спите листя"
-category: ["Heicha"]
+category: ["heicha"]
 tags: ["Шу пуери", "Хейча", "Чаї з дерев"]
 ---
 

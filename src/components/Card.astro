@@ -1,9 +1,9 @@
 ---
-const { img, alt, pill, title, description, author_img, author_name, time } = Astro.props;
+const { image, imageAlt, pill, title, description, author_img, author_name, time } = Astro.props;
 ---
 
 <article>
-    <img src={img} alt={alt}>
+    <img src={image} alt={imageAlt}>
     <p class="pill">{pill}</p>
     <h3>{title}</h3>
     <p>{description}</p>

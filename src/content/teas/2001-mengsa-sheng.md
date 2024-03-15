@@ -1,7 +1,8 @@
 ---
-title: Чай із давніх дерев Менса
+posted: true
+title: Чай з давніх дерев Менса
 subtitle: Витриманий Шен пуер
-description: Витриманий Шен пуер із Менса 2001 року, Юньнань.
+description: Витриманий Шен пуер із Менса, Юньнань; 2001 рік.
 region: гори Менса, Юньнань
 variety: вікові пуерні дерева
 yieldYear: 2001 рік
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/2001-mengsa-sheng/slide4.jpg"
 image4alt: "Колір настою, десята чашка"
 image5: "/src/assets/teas/2001-mengsa-sheng/slide5.jpg"
 image5alt: "Спите листя (чайне дно)"
-category: ["Shengcha"]
+category: ["shengcha"]
 tags: ["Шен пуери", "Витримані чаї", "Чаї з дерев"]
 ---
 

@@ -7,13 +7,12 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
 <section class="slider">
     <div class="wrapper">
-		<div class="slides">
+		<div class="list">
 			<figure id="slide1" class="slide">
 				<input type="radio" class="radio" name="images" id="image1" checked />
 				<Image 
 					src={image1}
 					alt={image1alt}
-					id="image1"
 					class="slideImage"
 				/>
 				<label for="image5" class="prev">
@@ -29,7 +28,6 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                 <Image 
 					src={image2} 
 					alt={image2alt}
-					id="image2"
 					class="slideImage"
 				/>
 				<label for="image1" class="prev">
@@ -45,7 +43,6 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                 <Image 
 					src={image3} 
 					alt={image3alt}
-					id="image3"
 					class="slideImage" 
 				/>
 				<label for="image2" class="prev">
@@ -61,7 +58,6 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                 <Image 
 					src={image4} 
 					alt={image4alt}
-					id="image4"
 					class="slideImage"
 				/>
 				<label for="image3" class="prev">
@@ -77,7 +73,6 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                 <Image
 					src={image5} 
 					alt={image5alt}
-					id="image5"
 					class="slideImage"
 				/>
 				<label for="image4" class="prev">
@@ -90,31 +85,31 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             </figure>
         </div>
         <nav id="nav-slides">
-            <label for="image1" id="dot1" class="indicator">
+            <label for="image1" class="indicator">
                 <Image
                     src={image1} 
                     alt={image1alt}
                     class="dotImage"
                 /></label>
-            <label for="image2" id="dot2" class="indicator">
+            <label for="image2" class="indicator">
                 <Image
                     src={image2} 
                     alt={image2alt}
                     class="dotImage"
                 /></label>
-            <label for="image3" id="dot3" class="indicator">
+            <label for="image3" class="indicator">
                 <Image
                     src={image3} 
                     alt={image3alt}
                     class="dotImage"
                 /></label>
-            <label for="image4" id="dot4" class="indicator">
+            <label for="image4" class="indicator">
                 <Image
                     src={image4} 
                     alt={image4alt}
                     class="dotImage"
                 /></label>
-            <label for="image5" id="dot5" class="indicator">
+            <label for="image5" class="indicator">
                 <Image
                     src={image5} 
                     alt={image5alt}
@@ -156,7 +151,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
     :global(.dark) .wrapper { background: #22201c; }
 
-    .slides {
+    .list {
 		height: inherit;
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -169,9 +164,9 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
 	}
 
-	.slides::-webkit-scrollbar { display: none; }
+	.list::-webkit-scrollbar { display: none; }
 
-	.slides {
+	.list {
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 	}
@@ -247,7 +242,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
     @media screen  and (min-width: 31rem){
         .wrapper,
-        .slides {
+        .list {
             border-radius: 1rem;
             
         }
@@ -264,7 +259,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             border-radius: 1rem;
 		}
 		
-		.slides {
+		.list {
             border-radius: .8rem;
 		}
 
@@ -293,10 +288,6 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 		#nav-slides { padding: .5rem 3.6rem; }
 
 		.indicator {
-			width: 100%;
-			aspect-ratio: 1/1;
-			border-radius: 50%;
-			opacity: 0.6;
 			filter: saturate(0.5);
 			transition: opacity ease 250ms;
 			box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
@@ -306,7 +297,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
 <script>
     document.addEventListener('astro:page-load', () => {
-		const list = document.querySelector(".slides");
+		const list = document.querySelector(".list");
 		const items = Array.from(document.querySelectorAll(".slide"));
 		const indicators = Array.from(document.querySelectorAll(".indicator"));
 

@@ -1,25 +1,26 @@
 ---
+posted: true
 title: Млинець Дяньхона з Айлао
 subtitle: Червоний чай із Юньнані
-description: Гори Айлао; весна 2017 року.
+description: Високогоряний Червоний чай з вікових дерев гір Айлао, Юньнань; весна 2017 року.
 region: гори Айлао, Юньнань
 variety: вікові дикі пуерні дерева
 yieldYear: весна 2017 року
 pubDate: 2023-09-07
 price: 2.5
 image: "/src/assets/teas/2017-ailao-dianhong-cake/2017-ailao-dianhong.jpg"
-imageAlt: "Дяньхон з Айлао 2017 року"
+imageAlt: Дяньхон з Айлао 2017 року
 image1: "/src/assets/teas/2017-ailao-dianhong-cake/slide1.jpg"
-image1alt: "Дяньхон з Айлао 2017 року"
+image1alt: Дяньхон з Айлао 2017 року
 image2: "/src/assets/teas/2017-ailao-dianhong-cake/slide2.jpg"
-image2alt: "Листя з дерев, яким більше 100 років"
+image2alt: Листя з дерев, яким більше 100 років
 image3: "/src/assets/teas/2017-ailao-dianhong-cake/slide3.jpg"
-image3alt: "Перша чашка"
+image3alt: Перша чашка
 image4: "/src/assets/teas/2017-ailao-dianhong-cake/slide4.jpg"
-image4alt: "Десята чашка"
+image4alt: Десята чашка
 image5: "/src/assets/teas/2017-ailao-dianhong-cake/slide5.jpg"
-image5alt: "Чайне дно"
-category: ["Hongcha"]
+image5alt: Чайне дно
+category: ["hongcha"]
 tags: ["Червоні чаї", "Дяньхони", "Чаї з дерев"]
 ---
 

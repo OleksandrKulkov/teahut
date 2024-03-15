@@ -1,7 +1,8 @@
 ---
+posted: true
 title: Любао 1990-х
 subtitle: Чайна мануфактура "Вуджов Джон Ча"
-description: Витриманий Любао з Вуджов початку 1990-х, Ґвансі.
+description: Витриманий Любао з Вуджов, Ґвансі; початок 1990-х.
 region: Вуджов, Ґвансі
 variety: дерева Любао
 yieldYear: початок 1990-х
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/1990s-liubao/slide4.jpg"
 image4alt: "Колір настою, десята чашка"
 image5: "/src/assets/teas/1990s-liubao/slide5.jpg"
 image5alt: "Спите листя"
-category: ["Heicha"]
+category: ["heicha"]
 tags: ["Любао", "Хейча", "Витримані чаї", "Чаї з дерев"]
 ---
 

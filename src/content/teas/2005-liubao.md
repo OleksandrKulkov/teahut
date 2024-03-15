@@ -1,7 +1,8 @@
 ---
+posted: true
 title: '"Лісовий чай із Ґвансі"'
 subtitle: Дикий Любао з Вуджов
-description: Любао 2005 року з листя диких дерев із Вуджов, Ґвансі.
+description: Любао з листя диких дерев із Вуджов, Ґвансі; 2005 рік.
 region: Вуджов, Ґвансі
 variety: дикі дерева Любао
 yieldYear: 2005 рік
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/2005-liubao/slide4.jpg"
 image4alt: "Десята чашка"
 image5: "/src/assets/teas/2005-liubao/slide5.jpg"
 image5alt: "Спите листя (чайне дно)"
-category: ["Heicha"]
+category: ["heicha"]
 tags: ["Любао","Хейча", "Витримані чаї", "Чаї з дерев"]
 ---
 

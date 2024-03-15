@@ -1,7 +1,8 @@
 ---
+posted: true
 title: Давні дерева Маньджуан
 subtitle: Витриманий Шен пуер
-description: Витриманий Шен пуер із Маньджуан 2004 року, Юньнань.
+description: Витриманий Шен пуер із Маньджуан, Юньнань; 2004 рік.
 region: гори Маньджуан, Юньнань
 variety: вікові пуерні дерева
 yieldYear: 2004 рік
@@ -19,7 +20,7 @@ image4: "/src/assets/teas/2004-manzhuang-sheng/slide4.jpg"
 image4alt: "Десята чашка"
 image5: "/src/assets/teas/2004-manzhuang-sheng/slide5.jpg"
 image5alt: "Спите листя (чайне дно)"
-category: ["Shengcha"]
+category: ["shengcha"]
 tags: ["Шен пуери", "Витримані чаї", "Чаї з дерев"]
 ---
 

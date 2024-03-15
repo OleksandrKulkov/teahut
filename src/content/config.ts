@@ -3,6 +3,7 @@ import { z, defineCollection } from "astro:content";
 const teas = defineCollection({
     type: 'content',
     schema: ({image}) => z.object({
+      posted: z.boolean().default(true),
       title: z.string(),
       subtitle: z.string(),
       description: z.string(),
