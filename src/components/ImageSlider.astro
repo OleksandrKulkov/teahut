@@ -12,7 +12,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 				<input type="radio" class="radio" name="images" id="image1" checked />
 				<Image 
 					src={image1}
-					alt={image1alt}
+					alt=""
 					class="slideImage"
 				/>
 				<label for="image5" class="prev">
@@ -27,7 +27,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 				<input type="radio" class="radio" name="images" id="image2" />
                 <Image 
 					src={image2} 
-					alt={image2alt}
+					alt=""
 					class="slideImage"
 				/>
 				<label for="image1" class="prev">
@@ -42,7 +42,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 				<input type="radio" class="radio" name="images" id="image3" />
                 <Image 
 					src={image3} 
-					alt={image3alt}
+					alt=""
 					class="slideImage" 
 				/>
 				<label for="image2" class="prev">
@@ -57,7 +57,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 				<input type="radio" class="radio" name="images" id="image4" />
                 <Image 
 					src={image4} 
-					alt={image4alt}
+					alt=""
 					class="slideImage"
 				/>
 				<label for="image3" class="prev">
@@ -72,7 +72,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 				<input type="radio" class="radio" name="images" id="image5" />
                 <Image
 					src={image5} 
-					alt={image5alt}
+					alt=""
 					class="slideImage"
 				/>
 				<label for="image4" class="prev">
@@ -297,6 +297,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
 <script>
     document.addEventListener('astro:page-load', () => {
+
 		const list = document.querySelector(".list");
 		const items = Array.from(document.querySelectorAll(".slide"));
 		const indicators = Array.from(document.querySelectorAll(".indicator"));
@@ -306,7 +307,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 			threshold: 0.6
 		});
 
-		function onIntersectionObserved(entries) {
+		function onIntersectionObserved(entries: any) {
 			entries.forEach(entry => {
 				if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
 					const intersectingIndex = items.indexOf(entry.target);
@@ -315,7 +316,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 			});
 		}
 
-		function activateIndicator(index) {
+		function activateIndicator(index: number) {
   			indicators.forEach((indicator, i) => {
     			indicator.classList.toggle("active", i === index);
   			});

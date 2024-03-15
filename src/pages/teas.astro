@@ -5,9 +5,11 @@ import { Image } from "astro:assets";
 import {exchangePrice} from "../utils/utils";
 
 const pageTitle = "Наші чаї";
-const allTeas = (await getCollection('teas')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const allTeas = (await getCollection('teas'))
+	.filter((tea) => tea.data.posted !== false)
+	.sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	);
 ---
 
 <ArticleLayout {pageTitle}>
@@ -31,6 +33,10 @@ const allTeas = (await getCollection('teas')).sort(
 				<label>
 					<input type="checkbox" name="baicha&lucha" checked />
 					Білі й Зелені
+				</label>
+				<label>
+					<input type="checkbox" name="wulong" checked />
+					Вулони
 				</label>
 			</div>
 		</form>
