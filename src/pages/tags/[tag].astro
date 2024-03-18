@@ -23,14 +23,24 @@ const { teas } = Astro.props;
 <MainLayout pageTitle={tag}>
   <div class="container">
     <h3>Чаї, позначені як "{tag}":</h3>
-    <ul>
-      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title}/>)}
-    </ul>
+    <section>
+      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} category={tea.data.category} />)}
+    </section>
   </div>
 </MainLayout>
 
 <style>
   .container { padding: 3rem 1rem 1rem; }
+
+  section {
+		/* block-size: 90cqw; */
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		/* grid-template-columns: repeat(3, min(200px, 33% - 1.5rem)); */
+		/* place-content: start center; */
+		margin-bottom: 2rem;
+	}
 
   @media(min-width: 48rem) {
     .container { padding: 3rem 4rem 1rem; }
