@@ -5,15 +5,19 @@ const { image, imageAlt, category, title, url } = Astro.props;
 ---
 
 <article>
-    <a href={url} data-astro-prefetch>
-        <Image
-            src={image} 
-            alt=""
-            class="teaImage" 
-        />
-        <h2>{title}</h2>
+	<a href={url} data-astro-prefetch>
+		<div class="container">
+			<Image
+			src={image} 
+			alt=""
+			class="teaImage" 
+			/>
+			<div class="info">
+				<h2>{title}</h2>
+				<p class="categories" data-category={category}></p>
+			</div>
+		</div>
     </a>
-    <p class="categories" data-category={category}></p>
 </article>
 
 <style>
@@ -40,8 +44,9 @@ const { image, imageAlt, category, title, url } = Astro.props;
 
 	& .categories {
 		background: oklch(96% 0.05 var(--hue));
-		border: 1px solid oklch(93% 0.1 var(--hue));
+		border: 1px solid oklch(35% 0.104 var(--hue));
 		color: oklch(35% 0.104 var(--hue));
+		text-align: center;
 	}
 }
 
@@ -49,6 +54,20 @@ const { image, imageAlt, category, title, url } = Astro.props;
         color: var(--active);
         text-decoration: none;
     }
+
+	.container {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 60% 40%;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
 
     .teaImage {
         max-width: 540px;
@@ -79,6 +98,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
 		margin: 0;
 		padding: clamp(0.25rem, 2cqw, 0.5rem);
 		font-variant: small-caps;
+		text-align: end;
 	}
 
 	.categories::after {
