@@ -74,7 +74,7 @@ const allTeas = (await getCollection('teas'))
 		/* block-size: 90cqw; */
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1em;
+		gap: 2em;
 		/* grid-template-columns: repeat(3, min(200px, 33% - 1.5rem)); */
 		place-content: start center;
 		margin-bottom: 2rem;
@@ -182,7 +182,7 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	figcaption h2 {
-		/* color: oklch(0.24 0.06 73.94); */
+		color: oklch(28% 0.04 75);
 		font-size: clamp(0.75rem, 9cqw, 1.2rem);
 		font-weight: 600;
 		letter-spacing: 0.1em;
@@ -191,10 +191,13 @@ const allTeas = (await getCollection('teas'))
 		text-align: center;
 	}
 
+	:global(.dark) figcaption h2 {
+		color: oklch(84% 0.06 94);
+	}
+
 	figcaption p {
 		color: oklch(57.18% 0.093 108.52);
 		font-size: 1rem;
-		/* margin-bottom: 0; */
 		text-align: center;
 	}
 
@@ -203,7 +206,8 @@ const allTeas = (await getCollection('teas'))
 		grid-template-columns: auto auto auto;
 		grid-template-rows: 1fr;
 		justify-content: space-around;
-		align-items: center
+		align-items: center;
+		margin-bottom: .5rem;
 	}
 
 	.pubDate,
