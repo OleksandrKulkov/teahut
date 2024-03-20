@@ -1,5 +1,15 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import { getCollection } from "astro:content";
+import TeaCard from '../components/TeaCard.astro';
+
+const allTeas = (await getCollection('teas'))
+	.filter((tea) => tea.data.posted !== false)
+	.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	)
+	.slice(0, 3);
+
 ---
 
 <ArticleLayout>
@@ -15,123 +25,28 @@ import ArticleLayout from '../layouts/ArticleLayout.astro';
 	<p class="last-line">
 		Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао", "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин у Світі. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для кожного з нас. Перед Природою і перед Чаєм, Її часточкою, ми всі рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
 	</p>
+	<h2 class="first-line">Нові надходження:</h2>
+	<section class="new-tea">
+		{allTeas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} category={tea.data.category} />)}
+	</section>
 </ArticleLayout>
 
 <style>
 	h1, h2, h3 { text-align: center; }
 
-	.teaInformation {
-		margin-bottom: 18vw;
-	}
-
-	.grigContainer {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		grid-template-rows: 2fr 0.5fr;
-		grid-template-areas: 
-		"slider information"
-		"sliderNav information"
-		;
-	}
-
-	.slider {
-		width: 100%;
-		
-	}
-
-	.slides {
-		height: inherit;
-	}
-
-	.cover { object-fit: cover; }
-
-	.wrapper {
-		position: relative;
-		max-height: 80dvh;
-		aspect-ratio: 1/1;
-		margin: 1.5rem 0 5vw;
-		background: var(--background);
-	}
-
-	:global(.dark) .wrapper { background: #22201c; }
-	
-	.slides {
-		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
-		width: 100%;
-		aspect-ratio: 1/1;
-		overflow-x: auto;
-		overflow-y: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		scroll-snap-type: x mandatory;
-		gap: 1rem;
-		-webkit-overflow-scrolling: touch;
-		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
-	}
-
-	.slider .slides::-webkit-scrollbar { display: none; }
-	
-	.slider .slides {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-	}
-	
-	.slider .slide {
-		position: relative;
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
-	}
-
-	.radio {
-		position: absolute;
-		bottom: 50px;
-		opacity: 0.01;
-	}
-
-	#image1,
-	#image2,
-	#image3,
-	#image4,
-	#image5 { accent-color: grey; }
-
-	.gridItem {
+	section {
 		display: flex;
-	}
-
-	#nav-slides {
-		position: absolute;
-		left: 50%;
-		bottom: -12vw;
-		transform: translateX(-50%);
-		display: flex;
-		gap: 3vw;
-	}
-
-	.dots {
-        /* pointer-events: none; */
-		width: 7vw;
-		height: 7vw;
-		border-radius: 50%;
-		overflow: hidden;
-		opacity: 0.7;
-		filter: saturate(0.5);
-		transition: opacity ease 250ms;
-		box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
-	}
-
-	.dots img{
-		width: 100%;
-		object-fit: cover;
+		flex-wrap: wrap;
+		gap: 2em;
+		place-content: start center;
+		margin-bottom: 2rem;
 	}
 
 	@media screen  and (min-width: 48rem){
-		.slider {
-			max-height: 80dvh;
-			aspect-ratio: 1/1;
-		
+		section {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
 		}
 	}
 </style>

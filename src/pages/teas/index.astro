@@ -71,11 +71,9 @@ const allTeas = (await getCollection('teas'))
 
 <style>
 	section .teaBlock {
-		/* block-size: 90cqw; */
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2em;
-		/* grid-template-columns: repeat(3, min(200px, 33% - 1.5rem)); */
 		place-content: start center;
 		margin-bottom: 2rem;
 	}
@@ -271,13 +269,12 @@ const allTeas = (await getCollection('teas'))
 		--hue: 146.65;
 	}
 
-	article:has([data-category="wulong"]) .container {
+	article:has([data-category="wulong&gaba"]) .container {
 		--hue: 167.82;
 	}
 
 	article .categories {
 		background: oklch(93% 0.09 var(--hue));
-		border: 1px solid oklch(93% 0.1 var(--hue));
 		color: oklch(60% 0.104 var(--hue));
 	}
 

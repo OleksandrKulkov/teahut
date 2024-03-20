@@ -8,7 +8,7 @@ variety: дикі дерева Любао
 yieldYear: 2005 рік
 pubDate: 2023-09-07
 price: 4.83
-image: "/src/assets/teas/2005-liubao/2005-liubao.webp"
+image: "/src/assets/teas/2005-liubao/2005-liubao.jpg"
 imageAlt: Любао 2005 року з Вуджов
 image1: "/src/assets/teas/2005-liubao/slide1.jpg"
 image1alt: Любао 2005 року з Вуджов
