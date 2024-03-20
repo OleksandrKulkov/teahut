@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleLayout from '../layouts/ArticleLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { Image } from "astro:assets";
-import {exchangePrice} from "../utils/utils";
+import {formatDate, exchangePrice} from "../../utils/utils";
 
 const pageTitle = "Наші чаї";
 const allTeas = (await getCollection('teas'))
@@ -35,34 +35,33 @@ const allTeas = (await getCollection('teas'))
 					Білі й Зелені
 				</label>
 				<label>
-					<input type="checkbox" name="wulong" checked />
-					Вулони
+					<input type="checkbox" name="wulong&gaba" checked />
+					Вулони й ҐАБА
 				</label>
 			</div>
 		</form>
 		<div class="teaBlock">
 			{allTeas.map((tea) => (
 				<article>
-					<p class="categories" data-category={tea.data.category}></p>
 					<div class="container">
 						<a href={`/teas/${tea.slug}/`} data-astro-prefetch>
 							<figure class="tea">
 								<Image 
-									src={tea.data.image} 
-									alt=""
-									class="teaImage" 
+								src={tea.data.image} 
+								alt=""
+								class="teaImage" 
 								/>
 								<figcaption>
 									<h2>{tea.data.title}</h2>
 									<p>{tea.data.description}</p>
 								</figcaption>
-							</figure>
+							</figure>				
 						</a>
-						<div class="categoryAndPrice">
-							<div class="priceBlock">
-								<p class="priceRow">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
-							</div>
-						</div>
+											<div class="priceBlock">
+												<date class="pubDate">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
+												<p class="categories" data-category={tea.data.category}></p>
+												<p class="priceRow">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
+											</div>
 					</div>
 				</article>
 			))}
@@ -151,24 +150,13 @@ const allTeas = (await getCollection('teas'))
 		inset-block-start: 0.125rem;
 	}
 
-	section:has([name="shengcha"]:checked) article:has([data-category="shengcha"]) {
+	section:has([name="shengcha"]:checked) article:has([data-category="shengcha"]),
+	section:has([name="heicha"]:checked) article:has([data-category="heicha"]),
+	section:has([name="hongcha"]:checked) article:has([data-category="hongcha"]),
+	section:has([name="baicha&lucha"]:checked) article:has([data-category="baicha&lucha"]),
+	section:has([name="wulong&gaba"]:checked) article:has([data-category="wulong&gaba"]) {
 		display: block;
 	}
-
-	section:has([name="heicha"]:checked) article:has([data-category="heicha"]) {
-		display: block;
-	}
-
-	section:has([name="hongcha"]:checked)
-		article:has([data-category="hongcha"]) {
-		display: block;
-	}
-
-	section:has([name="baicha&lucha"]:checked)
-		article:has([data-category="baicha&lucha"]) {
-		display: block;
-	}
-
 
 	article {
 		container-type: inline-size;
@@ -178,12 +166,19 @@ const allTeas = (await getCollection('teas'))
 
 	.teaImage {
 		aspect-ratio: 2 / 1;
-		border-radius: 0.9rem;
+		border-radius: .9rem .9rem 0 0;
 		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		margin-bottom: 1em;
+	}
+
+	.teaInfo {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 1rem;
 	}
 
 	figcaption h2 {
@@ -203,18 +198,21 @@ const allTeas = (await getCollection('teas'))
 		text-align: center;
 	}
 
-	.categoryAndPrice {
-		display: flex;
+	.priceBlock {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: 1fr;
 		justify-content: space-around;
-		align-items: center;
+		align-items: center
 	}
 
-	.priceBlock {
-		padding: 0 1.5rem;
-		display: flex;
-		/* grid-template-columns: 70% 25%; */
-		justify-content: space-between;
-		align-items: center
+	.pubDate,
+	.priceRow {
+		font-size: .8rem;
+	}
+
+	.pubDate span {
+		margin-left: .3rem;
 	}
 
 	.priceRow {
@@ -222,17 +220,17 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	.price {
-        padding-left: 1rem;
-        font-size: 1rem;
+        margin-left: .3rem;
+        font-size: 1.1rem;
         font-weight: 600;
         color: rgb(0, 153, 33);
     }
 
 	article .categories {
-		/* background: oklch(96% 0.05 var(--hue)); */
-		/* border: 1px solid oklch(93% 0.1 var(--hue)); */
+		background: oklch(96% 0.05 var(--hue));
+		border: 1px solid oklch(93% 0.1 var(--hue));
 		color: oklch(35% 0.104 var(--hue));
-		border-radius: 0.25rem;
+		border-radius: 0.3rem;
 		display: block;
 		font-size: clamp(0.5rem, 5.5cqw, 0.825rem);
 		letter-spacing: 0.15em;

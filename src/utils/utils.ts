@@ -9,13 +9,13 @@ export function formatDate(date: any) {
 
     return d.toLocaleDateString('uk-UA', {
         year: 'numeric',
-        month: 'long',
+        month: 'short',
         day: 'numeric'
     });
 }
       
 export function exchangePrice(price: number) {
-    const courseRate = 40;
+    const courseRate = 40.5;
     const coursePrice = courseRate * price;
     return coursePrice.toFixed();
 }
