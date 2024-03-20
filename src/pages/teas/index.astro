@@ -228,10 +228,9 @@ const allTeas = (await getCollection('teas'))
     }
 
 	article .categories {
-		background: oklch(96% 0.05 var(--hue));
-		border: 1px solid oklch(93% 0.1 var(--hue));
+		background: oklch(87% 0.05 var(--hue));
 		color: oklch(35% 0.104 var(--hue));
-		border-radius: 0 0 .9rem .9rem;
+		border-radius: 0 0 .8rem .8rem;
 		display: block;
 		font-size: clamp(0.5rem, 5.5cqw, 0.825rem);
 		letter-spacing: 0.15em;
@@ -250,7 +249,7 @@ const allTeas = (await getCollection('teas'))
 		/* color code by category */
 		border-radius: 0.9rem;
 		--hue: 0;
-		border: 1px solid oklch(93% 0.1 var(--hue));
+		border: 1px solid oklch(87% 0.1 var(--hue));
 	}
 
 	article:has([data-category="shengcha"]) .container {
@@ -262,7 +261,7 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	article:has([data-category="hongcha"]) .container {
-		--hue: 50.61;
+		--hue: 65;
 	}
 
 	article:has([data-category="baicha&lucha"]) .container {
@@ -274,7 +273,7 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	article .categories {
-		background: oklch(93% 0.09 var(--hue));
+		background: oklch(87% 0.09 var(--hue));
 		color: oklch(60% 0.104 var(--hue));
 	}
 
