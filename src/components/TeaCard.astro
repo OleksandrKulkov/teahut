@@ -8,9 +8,9 @@ const { image, imageAlt, category, title, url } = Astro.props;
 	<a href={url} data-astro-prefetch>
 		<div class="container">
 			<Image
-			src={image} 
-			alt=""
-			class="teaImage" 
+				src={image} 
+				alt=""
+				class="tea_image" 
 			/>
 			<h2>{title}</h2>
 			<p class="categories" data-category={category}></p>
@@ -21,7 +21,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
 <style>
     article {
 		margin: 0 auto;
-	/* color code by category */
+
 		border: 1px solid oklch(93% 0.1 var(--hue));
 		border-radius: .6rem;
 		--hue: 0;
@@ -57,10 +57,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
 		}
 	}
 
-    a {
-        /* color: var(--active); */
-        text-decoration: none;
-    }
+    a { text-decoration: none; }
 
 	.container {
 		min-height: 100%;
@@ -68,7 +65,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
 		flex-direction: column;
 	}
 
-    .teaImage {
+    .tea_image {
         max-width: 540px;
         width: 100%;
         height: 100%;
@@ -80,7 +77,6 @@ const { image, imageAlt, category, title, url } = Astro.props;
 
     h2 {
 		flex-grow: 1;
-        /* color: oklch(25% 0.104 146.51); */
 		font-size: clamp(1rem, 9cqw, 1.2rem);
 		font-weight: 600;
 		letter-spacing: 0.1em;
@@ -90,7 +86,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
     }
 
     .categories {
-		border-radius: 0 0 .6rem .6rem;
+		border-radius: 0 0 .5rem .5rem;
 		font-size: clamp(0.8rem, 5.5cqw, 1.1rem);
 		letter-spacing: 0.15em;
 		line-height: 1;

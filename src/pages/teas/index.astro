@@ -14,7 +14,7 @@ const allTeas = (await getCollection('teas'))
 
 <ArticleLayout {pageTitle}>
 	<section>
-		<h1 class="last-line">{pageTitle}:</h1>
+		<h1 class="last_line">{pageTitle}:</h1>
 		<form>
 			<div><p>Відфільтрувати за категоріями:</p></div>
 			<div class="boxes">
@@ -40,16 +40,16 @@ const allTeas = (await getCollection('teas'))
 				</label>
 			</div>
 		</form>
-		<div class="teaBlock">
+		<div class="tea_block">
 			{allTeas.map((tea) => (
 				<article>
 					<div class="container">
 						<a href={`/teas/${tea.slug}/`} data-astro-prefetch>
 							<figure class="tea">
 								<Image 
-								src={tea.data.image} 
-								alt=""
-								class="teaImage" 
+									src={tea.data.image} 
+									alt=""
+									class="tea_image" 
 								/>
 								<figcaption>
 									<h2>{tea.data.title}</h2>
@@ -57,9 +57,9 @@ const allTeas = (await getCollection('teas'))
 								</figcaption>
 							</figure>				
 						</a>
-							<div class="priceBlock">
-								<date class="pubDate">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-								<p class="priceRow">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
+							<div class="price_block">
+								<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
+								<p class="price_row">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
 							</div>
 							<p class="categories" data-category={tea.data.category}></p>
 					</div>
@@ -70,7 +70,7 @@ const allTeas = (await getCollection('teas'))
 </ArticleLayout>
 
 <style>
-	section .teaBlock {
+	section .tea_block {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2em;
@@ -78,26 +78,15 @@ const allTeas = (await getCollection('teas'))
 		margin-bottom: 2rem;
 	}
 
-	.teaBlock article {
-		width: 100%;
-		/* box-shadow: var(--box-shadow); */
-	}
+	.tea_block article { width: 100%; }
 
-	.teaBlock article:first-child {
+	.tea_block article:first-child {
 		margin-bottom: 0;
 	}
 	
-	.teaBlock article:first-child figcaption h2 {
+	.tea_block article:first-child figcaption h2 {
 		font-size: 1.5em;
 	}
-
-	/* article:nth-child(even) {
-		background-color: #c7b5b5;
-	}
-	
-	article:nth-child(odd) {
-		background-color: #e6e6e6;
-	} */
 
 	form {
 		display: flex;
@@ -105,11 +94,9 @@ const allTeas = (await getCollection('teas'))
 		background: var(--button);
 		border-radius: .8rem;
 		font-size: 1rem;
-		/* color: oklch(0.24 0.06 73.94); */
 		margin-block-end: 2rem;
 		justify-content: center;
 		padding: 1rem;
-		/* box-shadow: var(--box-shadow); */
 	}
 	
 	:global(.dark) form {
@@ -161,7 +148,7 @@ const allTeas = (await getCollection('teas'))
 		margin: 0;
 	}
 
-	.teaImage {
+	.tea_image {
 		aspect-ratio: 2 / 1;
 		border-radius: .9rem .9rem 0 0;
 		display: block;
@@ -171,12 +158,12 @@ const allTeas = (await getCollection('teas'))
 		margin-bottom: 1em;
 	}
 
-	.teaInfo {
+	/* .tea_info {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		margin-bottom: 1rem;
-	}
+	} */
 
 	figcaption h2 {
 		color: oklch(28% 0.04 75);
@@ -198,7 +185,7 @@ const allTeas = (await getCollection('teas'))
 		text-align: center;
 	}
 
-	.priceBlock {
+	.price_block {
 		display: grid;
 		grid-template-columns: auto auto;
 		grid-template-rows: 1fr;
@@ -207,16 +194,16 @@ const allTeas = (await getCollection('teas'))
 		margin-bottom: .5rem;
 	}
 
-	.pubDate,
-	.priceRow {
+	.pub_date,
+	.price_row {
 		font-size: .8rem;
 	}
 
-	.pubDate span {
+	.pub_date span {
 		margin-left: .3rem;
 	}
 
-	.priceRow {
+	.price_row {
 		margin-bottom: unset;
 	}
 
@@ -278,24 +265,24 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	@media(min-width: 48rem) {
-		section .teaBlock {
+		section .tea_block {
 			gap: 2rem;
 			justify-content: space-between;
 		}
 
-		.teaBlock article { width: calc(50% - 1rem); }
+		.tea_block article { width: calc(50% - 1rem); }
 
-		.teaBlock article * { transition: 0.2s ease; }
+		.tea_block article * { transition: 0.2s ease; }
 
-		.teaBlock article:first-child {
+		.tea_block article:first-child {
 				width: 100%;
 				margin-bottom: 1rem;
 				text-align: center;
 		}
 		
-		.teaBlock article:first-child img { width: 100%; }
+		.tea_block article:first-child img { width: 100%; }
 
-		.teaBlock article:first-child .title {
+		.tea_block article:first-child .title {
 			font-size: 2rem;
 		}
 

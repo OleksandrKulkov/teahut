@@ -116,11 +116,11 @@ img {
     color: var(--foreground-dark);
 }
 
-.first-line {
+.first_line {
     margin-top: 3rem;
 }
 
-.last-line {
+.last_line {
     margin-bottom: 1.8rem;
 }
 
