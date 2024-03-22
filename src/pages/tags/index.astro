@@ -10,7 +10,7 @@ const pageTitle = "Позначки чаїв";
 <MainLayout {pageTitle}>
   <div class="container">
     <h1>{pageTitle}:</h1>
-      <div class="tags last-line">
+      <div class="tags last_line">
           {tags.map((tag) => (
               <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
           ))}
