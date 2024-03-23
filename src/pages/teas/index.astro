@@ -57,11 +57,11 @@ const allTeas = (await getCollection('teas'))
 								</figcaption>
 							</figure>				
 						</a>
-							<div class="price_block">
-								<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-								<p class="price_row">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
-							</div>
-							<p class="categories" data-category={tea.data.category}></p>
+						<div class="price_block">
+							<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
+							<p class="price_row">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
+						</div>
+						<p class="categories" data-category={tea.data.category}></p>
 					</div>
 				</article>
 			))}
@@ -158,13 +158,6 @@ const allTeas = (await getCollection('teas'))
 		margin-bottom: 1em;
 	}
 
-	/* .tea_info {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		margin-bottom: 1rem;
-	} */
-
 	figcaption h2 {
 		color: oklch(28% 0.04 75);
 		font-size: clamp(0.75rem, 9cqw, 1.2rem);
@@ -190,7 +183,7 @@ const allTeas = (await getCollection('teas'))
 		grid-template-columns: auto auto;
 		grid-template-rows: 1fr;
 		justify-content: space-around;
-		align-items: center;
+		align-items: baseline;
 		margin-bottom: .5rem;
 	}
 
@@ -209,9 +202,9 @@ const allTeas = (await getCollection('teas'))
 
 	.price {
         margin-left: .3rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: rgb(0, 153, 33);
+        font-size: clamp(1rem, 9cqw, 1.5rem);
+        font-weight: 500;
+        color: oklch(59% 0.19 144.27);
     }
 
 	article .categories {
