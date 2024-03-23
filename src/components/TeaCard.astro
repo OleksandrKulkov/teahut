@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-const { image, imageAlt, category, title, url } = Astro.props;
+const { image, imageAlt, category, title, subtitle, url } = Astro.props;
 ---
 
 <article>
@@ -12,7 +12,10 @@ const { image, imageAlt, category, title, url } = Astro.props;
 				alt=""
 				class="tea_image" 
 			/>
-			<h2>{title}</h2>
+			<div class="information">
+				<h2>{title}</h2>
+				<h5 class="subtitle">{subtitle}</h5>
+			</div>
 			<p class="categories" data-category={category}></p>
 		</div>
     </a>
@@ -47,7 +50,7 @@ const { image, imageAlt, category, title, url } = Astro.props;
 		}
 
 		& img {
-			border-radius: .6rem .6rem 0 0;
+			border-radius: .5rem .5rem 0 0;
 		}
 
 		& .categories {
@@ -75,15 +78,27 @@ const { image, imageAlt, category, title, url } = Astro.props;
 		object-fit: cover;
     }
 
-    h2 {
+	.information {
 		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+    h2 {
 		font-size: clamp(1rem, 9cqw, 1.2rem);
 		font-weight: 600;
 		letter-spacing: 0.1em;
 		line-height: 1.1;
-		margin: clamp(0.125rem, 2cqw, 0.375rem) auto;
+		margin: clamp(0.5rem, 2cqw, 0.375rem) auto;
         text-align: center;
     }
+
+	.subtitle {
+		font-size: clamp(0.8rem, 9cqw, 1rem);
+		font-weight: 400;
+		text-align: center;
+	}
 
     .categories {
 		border-radius: 0 0 .5rem .5rem;

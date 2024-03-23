@@ -24,7 +24,7 @@ const { teas } = Astro.props;
   <div class="container">
     <h3 class="header">Чаї, позначені як <span>"{tag}"</span>:</h3>
     <section>
-      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} category={tea.data.category} />)}
+      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
     </section>
   </div>
 </MainLayout>
