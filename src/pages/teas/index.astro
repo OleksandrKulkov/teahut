@@ -180,16 +180,15 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	.price_block {
+		font-size: clamp(.7rem, 9cqw, 1rem);
+		padding: 0 1rem;
 		display: grid;
 		grid-template-columns: 1.3fr .7fr;
 		grid-template-rows: 1fr;
-		/* justify-content: space-around; */
 		align-items: baseline;
-		padding: 0 1rem;
 	}
 
 	.pub_date {
-		font-size: font-size: clamp(.7rem, 9cqw, 1rem);
 	}
 
 	.pub_date span {
@@ -197,7 +196,6 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	.price_row {
-		font-size: clamp(.7rem, 9cqw, 1rem);
 		margin-bottom: unset;
 		justify-self: end;
 	}
