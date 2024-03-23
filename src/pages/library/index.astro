@@ -1,8 +1,26 @@
 ---
+import { getCollection } from "astro:content";
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
 
+const allPosts = (await getCollection("library")).sort(
+    (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+const pageTitle = "Читальня";
 ---
 
 <ArticleLayout>
-    
+    <h1>{pageTitle}</h1>
+	<ul class="posts-preview">
+        {allPosts.map((post) => (
+            <BlogPost
+                class="post"
+                url={`/library/${post.slug}/`}
+                title={post.data.title}
+                subtitle={post.data.subtitle}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+            />
+        ))}
+    </ul>
 </ArticleLayout>
