@@ -59,7 +59,7 @@ const allTeas = (await getCollection('teas'))
 						</a>
 						<div class="price_block">
 							<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-							<p class="price_row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10 гр</p>
+							<p class="price_row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10гр</p>
 						</div>
 						<p class="categories" data-category={tea.data.category}></p>
 					</div>
@@ -199,7 +199,7 @@ const allTeas = (await getCollection('teas'))
 	.price_row {
 		font-size: .8rem;
 		margin-bottom: unset;
-		justify-self: center;
+		justify-self: end;
 	}
 
 	.price {
