@@ -59,7 +59,7 @@ const allTeas = (await getCollection('teas'))
 						</a>
 						<div class="price_block">
 							<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-							<p class="price_row">Вартість: <span class="price">{exchangePrice(tea.data.price)}</span> грн.</p>
+							<p class="price_row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10 гр</p>
 						</div>
 						<p class="categories" data-category={tea.data.category}></p>
 					</div>
@@ -188,8 +188,7 @@ const allTeas = (await getCollection('teas'))
 		margin: 0 0 .5rem;
 	}
 
-	.pub_date,
-	.price_row {
+	.pub_date {
 		font-size: .8rem;
 	}
 
@@ -198,11 +197,12 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	.price_row {
+		font-size: 1rem;
 		margin-bottom: unset;
 	}
 
 	.price {
-        margin-left: .3rem;
+        margin: 0 .2rem;
         font-size: clamp(1rem, 9cqw, 1.5rem);
         font-weight: 500;
         color: oklch(59% 0.19 144.27);
