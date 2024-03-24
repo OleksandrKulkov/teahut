@@ -66,5 +66,5 @@ category: ["Статті"]
 <p style="text-align: right;"><span style="font-size: 11pt;">Статтю було надруковано в лютневому числі<br />журналу "Всесвітньої Чайної Хатинки" за 2012 рік</span></p>
 <p style="text-align: right;"><span style="font-size: 11pt;"><em>Перекладено спеціяльно для <em>TeaHut.com.ua</em></em></span></p>
 <div style="display: flex; justify-content: end;">
-  <img style="display: block;" src="/images/teakettle.gif" alt="Малюнок чайника й чашки" />
+  <img style="display: block;  width: 70px;" src="/teakettle.gif" alt="Чайник і чашка" />
 </div>

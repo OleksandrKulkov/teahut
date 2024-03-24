@@ -1,19 +1,23 @@
 ---
-const { image, imageAlt, pill, title, description, author_img, author_name, time } = Astro.props;
+import { Image } from "astro:assets";
+
+const { url, image, imageAlt, pill, title, description, author_img, author_name, time } = Astro.props;
 ---
 
 <article>
-    <img src={image} alt={imageAlt}>
-    <p class="pill">{pill}</p>
-    <h3>{title}</h3>
-    <p>{description}</p>
-    <div class="author">
-        <img src={author_img} alt={author_name}>
-        <div>
-            <p><strong>{author_name}</strong></p>
-            <p>{time}</p>
+    <a href={url} data-astro-prefetch>
+        <img src={image} alt="">
+        <p class="pill">{pill}</p>
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </a>
+        <div class="author">
+            <img src={author_img} alt={author_name}>
+            <div>
+                <p><strong>{author_name}</strong></p>
+                <p>{time}</p>
+            </div>
         </div>
-    </div>
 </article>
 
 <style>

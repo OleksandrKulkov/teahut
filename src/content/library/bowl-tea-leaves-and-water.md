@@ -106,5 +106,5 @@ category: ["Статті"]
 <p>&nbsp;</p>
 <p style="text-align: right; font-size: 11pt;"><em>Статтю надруковано в 4-у числі</em><br /><em>часопису&nbsp;<a title="globalteahut.org" href="http://www.globalteahut.org/" target="_blank" rel="noopener">Global Tea Hut</a>&nbsp;за 2012-ий рік.</em><br /><em>Перекладено спеціяльно для <em>TeaHut.com.ua</em></em></p>
 <div style="display: flex; justify-content: end;">
-  <img style="display: block;" src="/images/teakettle.gif" alt="Малюнок чайника й чашки" />
+  <img style="display: block;  width: 70px;" src="/teakettle.gif" alt="Чайник і чашка" />
 </div>

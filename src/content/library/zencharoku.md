@@ -72,5 +72,5 @@ category: ["Статті"]
 <p>&nbsp;</p>
 <p style="text-align: right;">Українською перекладено з московської версії</br> спеціяльно для <em>TeaHut.com.ua</em></p>
 <div style="display: flex; justify-content: end;">
-  <img style="display: block;" src="/images/teakettle.gif" alt="Малюнок чайника й чашки" />
+  <img style="display: block;  width: 70px;" src="/teakettle.gif" alt="Чайник і чашка" />
 </div>

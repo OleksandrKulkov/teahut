@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 
 const allPosts = (await getCollection("library")).sort(
@@ -9,9 +9,9 @@ const allPosts = (await getCollection("library")).sort(
 const pageTitle = "Читальня";
 ---
 
-<ArticleLayout>
+<MainLayout>
     <h1>{pageTitle}</h1>
-	<ul class="posts-preview">
+	<section class="posts-preview">
         {allPosts.map((post) => (
             <BlogPost
                 class="post"
@@ -22,5 +22,5 @@ const pageTitle = "Читальня";
                 pubDate={post.data.pubDate}
             />
         ))}
-    </ul>
-</ArticleLayout>
+    </section>
+</MainLayout>
