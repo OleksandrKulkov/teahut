@@ -183,7 +183,7 @@ const allTeas = (await getCollection('teas'))
 		font-size: clamp(.6rem, 9cqw, 1rem);
 		padding: 0 1rem;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		align-items: baseline;
 	}
 
@@ -286,7 +286,6 @@ const allTeas = (await getCollection('teas'))
 		}
 
 		.price_block {
-			grid-template-columns: repeat(2, auto);
 			padding: 0;
 			justify-content: space-around;
 		}
