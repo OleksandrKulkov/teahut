@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from '../../layouts/MainLayout.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BlogPost from '../../components/BlogPost.astro';
 
 const allPosts = (await getCollection("library")).sort(
@@ -9,7 +9,7 @@ const allPosts = (await getCollection("library")).sort(
 const pageTitle = "Читальня";
 ---
 
-<MainLayout>
+<ArticleLayout>
     <h1>{pageTitle}</h1>
 	<section class="posts-preview">
         {allPosts.map((post) => (
@@ -23,4 +23,4 @@ const pageTitle = "Читальня";
             />
         ))}
     </section>
-</MainLayout>
+</ArticleLayout>
