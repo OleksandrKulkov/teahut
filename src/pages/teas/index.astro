@@ -182,9 +182,8 @@ const allTeas = (await getCollection('teas'))
 	.price_block {
 		font-size: clamp(.6rem, 9cqw, 1rem);
 		padding: 0 1rem;
-		display: grid;
-		grid-template-columns: 1.3fr .7fr;
-		grid-template-rows: 1fr;
+		display: flex;
+		justify-content: space-evenly;
 		align-items: baseline;
 	}
 
