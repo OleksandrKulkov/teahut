@@ -45,7 +45,7 @@ const teas = defineCollection({
     })
 });
 
-const posts = defineCollection({
+const library = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -59,4 +59,4 @@ const posts = defineCollection({
   })
 })
 
-export const collections = { teas, posts };
+export const collections = { teas, library };

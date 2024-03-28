@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BlogPost from '../../components/BlogPost.astro';
 
-const allPosts = (await getCollection("library")).sort(
+const allPosts = (await getCollection("library"))
+    .filter((post) => post.data.posted !== false)
+    .sort(
     (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
 const pageTitle = "Читальня";
