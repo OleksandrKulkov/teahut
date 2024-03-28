@@ -6,14 +6,22 @@ const { frontmatter } = Astro.props;
 
 <MainLayout pageTitle={frontmatter.title} >
     <div class="container">
-        <h1>{frontmatter.title}</h1>
-        <p>Written by {frontmatter.author}</p>
+        <h1 class="title">{frontmatter.title}</h1>
+        <p class="author last_line">{frontmatter.author}</p>
         <slot />
     </div>
 </MainLayout>
 
 <style>
 	.container { padding: 3rem 1rem 1rem; }
+
+    .title { text-align: center;}
+
+    .author { 
+        font-style: italic;
+        text-align: end;
+        margin-right: clamp(2rem, 2cqw, 5rem);
+    }
 
 	@media(min-width: 48rem) {
 		.container { padding: 3rem 4rem 2rem; }
