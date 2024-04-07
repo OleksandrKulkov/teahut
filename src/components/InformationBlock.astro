@@ -29,11 +29,11 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                     <div><p>{yieldYear}</p></div>
                 </div>
                 <div class="region">
-                    <div>Походження:</div>
+                    <div class="heading">Походження:</div>
                     <div><p>{region}</p></div>
                 </div>
                 <div class="variety">
-                    <div>Різновид:</div>
+                    <div class="heading">Різновид:</div>
                     <div><p>{variety}</p></div>
                 </div>
                 <div class="priceBlock">
@@ -75,6 +75,10 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
     .priceBlock {
         display: flex;
         justify-content: space-between;
+    }
+
+    .heading {
+        margin-right: 1rem;
     }
     
     .priceBlock { align-items: center; }
