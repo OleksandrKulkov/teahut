@@ -198,23 +198,12 @@ import Logo from './Logo.astro';
         width: max-content;
      }
 
-    /* .hamburger-menu:has(input:checked) {
-        --foreground: var(--background);
-    } */
-
     .hamburger-menu:has(input:focus-visible)::before,
     .hamburger-menu:has(input:focus-visible)::after,
     .hamburger-menu input:focus-visible {
         border: 1px solid var(--background);
         box-shadow: 0 0 0 1px var(--foreground-dark);
     }
-
-    /* .dark .hamburger-menu:has(input:focus-visible)::before,
-    .dark .hamburger-menu:has(input:focus-visible)::after,
-    .dark .hamburger-menu input:focus-visible {
-        border: 1px solid var(--background-dark);
-        box-shadow: 0 0 0 1px var(--foreground-dark);
-    } */
 
     .hamburger-menu::before,
     .hamburger-menu::after,
@@ -275,7 +264,6 @@ import Logo from './Logo.astro';
             grid-area: link2;
         }
 
-        
         .link:not(.home-link) {
             display: flex;
             padding: 0;
