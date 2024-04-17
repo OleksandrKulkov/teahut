@@ -15,7 +15,10 @@ const teas = defineCollection({
         .string()
         .or(z.date())
         .transform((val) => new Date(val)),
+      item: z.string().optional(),
       price: z.number(),
+      item2: z.string().optional(),
+      price2: z.number().optional(),
       image: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
       }),

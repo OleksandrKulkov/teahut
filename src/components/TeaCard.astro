@@ -49,6 +49,10 @@ const { image, category, title, subtitle, url } = Astro.props;
 			--hue: 167.82;
 		}
 
+		&:has([data-category="japanese"]) {
+			--hue: 153;
+		}
+
 		& img {
 			border-radius: .5rem .5rem 0 0;
 		}

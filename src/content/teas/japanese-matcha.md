@@ -3,25 +3,26 @@ posted: false
 title: Матча від Марук'ю Коямаен
 subtitle: Японський зелений порошковий чай
 description: Завжди свіжий матча від Марук'ю Коямаен з Уджі, Японія.
-region: містечко Уджі, префектура Кіото
+region: Уджі, префектура Кіото
 variety: чайні кущі
-yieldYear: Цей рік
+yieldYear: завжди свіжий
 pubDate: 2023-12-03
-price: 4.25
-image: "/src/assets/teas/2023-wuliang-wild-sheng/2023-wuliang-wild-sheng.jpg"
-imageAlt: Млинець 2023 року з Вулян Шань
-image1: "/src/assets/teas/2023-wuliang-wild-sheng/slide1.jpg"
-image1alt: Дикі дерева Вулян Шань
-image2: "/src/assets/teas/2023-wuliang-wild-sheng/slide2.jpg"
-image2alt: Листя спресоване не сильно
-image3: "/src/assets/teas/2023-wuliang-wild-sheng/slide3.jpg"
-image3alt: Настій першої чашки
-image4: "/src/assets/teas/2023-wuliang-wild-sheng/slide4.jpg"
+item: '"Аоараші", баночка 40 гр'
+price: 12.22
+image: "/src/assets/teas/japanese-matcha/japanese-matcha.jpg"
+imageAlt: Матча від Марук'ю Коямаен
+image1: "/src/assets/teas/japanese-matcha/slide1.jpg"
+image1alt: '"Аоараші", 40 гр'
+image2: "/src/assets/teas/japanese-matcha/slide2.jpg"
+image2alt: '"Ісудзу", 40 гр'
+image3: "/src/assets/teas/japanese-matcha/slide3.jpg"
+image3alt: '"Кінрін", 20 гр'
+image4: "/src/assets/teas/japanese-matcha/slide4.jpg"
 image4alt: Колір десятої чашки
-image5: "/src/assets/teas/2023-wuliang-wild-sheng/slide5.jpg"
+image5: "/src/assets/teas/japanese-matcha/slide5.jpg"
 image5alt: Спите листя
-category: ["shengcha"]
-tags: ["ShengPuerh", "WildTea", "TeaTrees"]
+category: ["japanese"]
+tags: ["GreenTea", "JapaneseTea", "Matcha"]
 ---
 
 Матча (matcha) "Аоараші" від Марук’ю Коямаен розпочинає серію преміяльних порошкових зелених чаїв для чайного дійства Тяною відомого японського бренду з Уджі, що в префектурі Кіото. Найчастіше його беруть для рідкого, легкого чаю усутя. Проте ця початкова легкість може бути оманливою. Його невипадково так назвали: "Аоараші" перекладається з японської як "синя хвоща". Тому зважайте на це, якщо захочете попити його на ніч. Він чудово бадьорить і підтримує як душевний, так і фізичний стан.
