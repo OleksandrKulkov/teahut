@@ -6,10 +6,8 @@ import TeaCard from '../components/TeaCard.astro';
 const allTeas = (await getCollection('teas'))
 	.filter((tea) => tea.data.posted !== false)
 	.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-	)
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
-
 ---
 
 <ArticleLayout>

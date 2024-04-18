@@ -26,3 +26,20 @@ const pageTitle = "Читальня";
         ))}
     </section>
 </ArticleLayout>
+
+<style>
+    section.posts-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        place-content: start center;
+		margin-bottom: 2rem;
+    }
+
+    @media(min-width: 48rem) {
+        section.posts-preview {
+            gap: 2rem;
+            justify-content: space-between;
+        }
+    }
+</style>
