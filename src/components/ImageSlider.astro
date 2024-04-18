@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt, image4alt, image5alt } = Astro.props;
+const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = image1, image1alt, image2alt = image1alt, image3alt = image1alt, image4alt = image1alt, image5alt = image1alt } = Astro.props;
 ---
 
 <section class="slider">
@@ -244,7 +244,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 		transition: opacity 250ms ease;
 	}
 
-    @media screen  and (min-width: 31rem){
+    @media screen and (min-width: 31rem){
         .wrapper,
         .list {
             border-radius: 1rem;
@@ -258,7 +258,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         }
     }
 
-    @media screen  and (min-width: 48rem){
+    @media screen and (min-width: 48rem){
 		.wrapper {
             border-radius: 1rem;
 		}

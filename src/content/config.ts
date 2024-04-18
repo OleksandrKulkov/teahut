@@ -17,8 +17,6 @@ const teas = defineCollection({
         .transform((val) => new Date(val)),
       item: z.string().optional(),
       price: z.number(),
-      item2: z.string().optional(),
-      price2: z.number().optional(),
       image: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
       }),
@@ -29,20 +27,20 @@ const teas = defineCollection({
       image1alt: z.string(),
       image2: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
-      }),
-      image2alt: z.string(),
+      }).optional(),
+      image2alt: z.string().optional(),
       image3: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
-      }),
-      image3alt: z.string(),
+      }).optional(),
+      image3alt: z.string().optional(),
       image4: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
-      }),
-      image4alt: z.string(),
+      }).optional(),
+      image4alt: z.string().optional(),
       image5: image().refine((img) => img.width >= 900, {
         message: "Cover image must be at least 900 pixels wide!",
-      }),
-      image5alt: z.string(),
+      }).optional(),
+      image5alt: z.string().optional(),
       category: z.array(z.string()),
       tags: z.array(z.string())
     })

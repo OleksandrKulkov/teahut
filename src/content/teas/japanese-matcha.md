@@ -17,10 +17,6 @@ image2: "/src/assets/teas/japanese-matcha/slide2.jpg"
 image2alt: '"Ісудзу", 40 гр'
 image3: "/src/assets/teas/japanese-matcha/slide3.jpg"
 image3alt: '"Кінрін", 20 гр'
-image4: "/src/assets/teas/japanese-matcha/slide4.jpg"
-image4alt: Колір десятої чашки
-image5: "/src/assets/teas/japanese-matcha/slide5.jpg"
-image5alt: Спите листя
 category: ["japanese"]
 tags: ["GreenTea", "JapaneseTea", "Matcha"]
 ---
