@@ -1,0 +1,86 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const allPosts = (await getCollection("library"))
+        .filter((post) => post.data.posted !== false)
+        .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+    );
+    return paginate(allPosts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+const title = `Читальня`;
+const subtitle = `сторінка ${page.currentPage}`
+---
+
+<ArticleLayout title={title}>
+  <h1>{title}</h1>
+  <h4 class="last_line">{subtitle}</h4>
+
+  <section class="posts-preview">
+    {
+      page.data.map((p) => (
+        <BlogPost
+                class="post"
+                url={`/library/${p.slug}/`}
+                title={p.data.title}
+                subtitle={p.data.subtitle}
+                description={p.data.description}
+                pubDate={p.data.pubDate}
+        />
+      ))
+    }
+  </section>
+  <div class="pagination-block"
+    style="display: flex; justify-content: center; gap: 2rem; padding: 2rem; margin-top: 2rem; border: 2px solid var(--surface-2);"
+  >
+    {page.url.prev && <a href={page.url.prev}>Попередня</a>}
+    {page.url.next && <a href={page.url.next}>Наступна</a>}
+  </div>
+</ArticleLayout>
+
+<style>
+    h1, h4 {
+        text-align: center;
+    }
+
+    section.posts-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        place-content: start center;
+		margin-bottom: 2rem;
+    }
+
+    .pagination-block {
+        display: flex; 
+        justify-content: center; 
+        gap: 3rem; 
+        padding: 2rem; 
+        margin-top: 2rem;
+    }
+    
+    .pagination-block > a {
+        color: var(--foreground);
+    }
+
+    :global(.dark) .pagination-block > a {
+        color: var(--foreground-dark);
+    }
+
+    .pagination-block > a:hover {
+        color: var(--active);
+    }
+
+    @media(min-width: 48rem) {
+        section.posts-preview {
+            gap: 2rem;
+            justify-content: space-between;
+        }
+    }
+</style>
