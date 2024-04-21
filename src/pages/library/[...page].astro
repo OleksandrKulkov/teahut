@@ -36,9 +36,7 @@ const subtitle = `сторінка ${page.currentPage}`
       ))
     }
   </section>
-  <div class="pagination-block"
-    style="display: flex; justify-content: center; gap: 2rem; padding: 2rem; margin-top: 2rem; border: 2px solid var(--surface-2);"
-  >
+  <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev}>Попередня</a>}
     {page.url.next && <a href={page.url.next}>Наступна</a>}
   </div>
@@ -61,8 +59,7 @@ const subtitle = `сторінка ${page.currentPage}`
         display: flex; 
         justify-content: center; 
         gap: 3rem; 
-        padding: 2rem; 
-        margin-top: 2rem;
+        padding-bottom: 1rem; 
     }
     
     .pagination-block > a {
