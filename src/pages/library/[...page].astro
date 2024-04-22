@@ -37,8 +37,8 @@ const subtitle = `сторінка ${page.currentPage}`
     }
   </section>
   <div class="pagination-block">
-    {page.url.prev && <a href={page.url.prev}>Попередня</a>}
-    {page.url.next && <a href={page.url.next}>Наступна</a>}
+    {page.url.prev && <a href={page.url.prev}>Попередня сторінка</a>}
+    {page.url.next && <a href={page.url.next}>Наступна сторінка</a>}
   </div>
 </ArticleLayout>
 
@@ -59,10 +59,13 @@ const subtitle = `сторінка ${page.currentPage}`
         display: flex; 
         justify-content: center; 
         gap: 3rem; 
-        padding-bottom: 1rem; 
+        margin-bottom: 1.5rem;
     }
     
     .pagination-block > a {
+        padding: 0.2rem 0.5rem;
+        border: 1px solid var(--foreground);
+        border-radius: 0.5rem;
         color: var(--foreground);
     }
 
@@ -78,6 +81,10 @@ const subtitle = `сторінка ${page.currentPage}`
         section.posts-preview {
             gap: 2rem;
             justify-content: space-between;
+        }
+
+        .pagination-block {
+            margin-bottom: 2rem;
         }
     }
 </style>
