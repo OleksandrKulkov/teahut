@@ -66,15 +66,18 @@ const subtitle = `сторінка ${page.currentPage}`
         padding: 0.2rem 0.5rem;
         border: 1px solid var(--foreground);
         border-radius: 0.5rem;
+        font-size: 0.9rem;
         color: var(--foreground);
     }
 
     :global(.dark) .pagination-block > a {
         color: var(--foreground-dark);
+        border: 1px solid var(--foreground-dark);
     }
 
     .pagination-block > a:hover {
         color: var(--active);
+        border: 1px solid var(--active);
     }
 
     @media(min-width: 48rem) {
