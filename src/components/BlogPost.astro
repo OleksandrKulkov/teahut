@@ -8,7 +8,7 @@ const { url, image, imageAlt, pill, title, description, author_img, author_name,
     <a href={url} data-astro-prefetch>
         <img src={image} alt="">
         <p class="pill">{pill}</p>
-        <h3>{title}</h3>
+        <h3 class="title">{title}</h3>
         <p>{description}</p>
     </a>
         <div class="author">
@@ -23,6 +23,22 @@ const { url, image, imageAlt, pill, title, description, author_img, author_name,
 <style>
     article {
         margin: 0 0.7rem;
+    }
+
+    .title {
+        color: var(--green);
+    }
+
+    :global(.dark) .title {
+        color: var(--active);
+    }
+
+    a {
+        color: var(--foreground);
+    }
+
+    :global(.dark) a {
+        color: var(--foreground-dark);
     }
 
     @media (min-width: 48rem) {

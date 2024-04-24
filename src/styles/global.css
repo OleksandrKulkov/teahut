@@ -8,6 +8,7 @@
     --header: oklch(23.07% 0.037 96.74);
     --footer: oklch(20% 0.031 96.93);
     --button: oklch(72.18% 0.093 108.52 / 52%);
+    --green: oklch(46% 0.12 144 / 90%);
     --active: rgb(163, 128, 23);
     --gray: 102, 101, 97;
     --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
@@ -91,7 +92,7 @@ h5 {
     font-size: 1.04em;
 }
 
-p {
+p:not(:last-child) {
     margin-bottom: 1em;
 }
 

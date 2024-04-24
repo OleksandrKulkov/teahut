@@ -10,7 +10,7 @@ import Logo from './Logo.astro';
         <Logo />
     </a>
     <a class="home-link link" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
-    <a class="teas-link link" href="/teas/" aria-label="To Our Tea" data-astro-prefetch>Наші чаї</a>
+    <a class="teas-link link" href="/teas/" aria-label="To Our Tea" data-astro-prefetch>Чай</a>
     <a class="library-link link" href="/library/" aria-label="To Library" data-astro-prefetch>Читальня</a>
     <div class="search-toggle-block link">
         <a class="search-link icon" href="/search/" aria-label="До Пошуку" data-astro-prefetch>
@@ -116,12 +116,12 @@ import Logo from './Logo.astro';
         color: var(--foreground-dark);
     }
 
-    .teas-link {
-        grid-area: link2;
-    }
-
     .library-link {
         grid-area: link3;
+    }
+
+    .teas-link {
+        grid-area: link2;
     }
 
     .search-toggle-block {
@@ -260,10 +260,6 @@ import Logo from './Logo.astro';
             "logo . link1 link2 link3 . link4";
         }
 
-        .teas-link {
-            grid-area: link2;
-        }
-
         .link:not(.home-link) {
             display: flex;
             padding: 0;
@@ -290,8 +286,8 @@ import Logo from './Logo.astro';
 
         :global(.dark) .link:hover:not(.search-toggle-block),
         :global(.dark) .link:active {
-            color: #a38017;
-            border: solid 1px var(--foreground-dark);
+            color: var(--active);
+            border: solid 1px var(--active);
             background-color: unset;
             opacity: 1;
         }
