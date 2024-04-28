@@ -1,15 +1,21 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { Image } from "astro:assets";
 import {formatDate, exchangePrice} from "../../utils/utils";
 
+export const getStaticPaths = (async ({ paginate }) => {
+    const allTeas = (await getCollection("teas"))
+        .filter((tea) => tea.data.posted !== false)
+        .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+    );
+    return paginate(allTeas, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
 const pageTitle = "Наші чаї";
-const allTeas = (await getCollection('teas'))
-	.filter((tea) => tea.data.posted !== false)
-	.sort(
-		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-	);
+const { page } = Astro.props;
+const pageNumber = `сторінка ${page.currentPage}`
 ---
 
 <ArticleLayout {pageTitle}>
@@ -41,7 +47,7 @@ const allTeas = (await getCollection('teas'))
 			</div>
 		</form>
 		<div class="tea_block">
-			{allTeas.map((tea) => (
+			{page.data.map((tea) => (
 				<article>
 					<div class="container">
 						<a href={`/teas/${tea.slug}/`} data-astro-prefetch>
@@ -67,6 +73,11 @@ const allTeas = (await getCollection('teas'))
 			))}
 		</div>
 	</section>
+    <h5 class="page-number">{pageNumber}</h5>
+    <div class="pagination-block">
+        {page.url.prev && <a href={page.url.prev}>Попередня сторінка</a>}
+        {page.url.next && <a href={page.url.next}>Наступна сторінка</a>}
+    </div>
 </ArticleLayout>
 
 <style>
@@ -79,14 +90,6 @@ const allTeas = (await getCollection('teas'))
 	}
 
 	.tea_block article { width: 100%; }
-
-	.tea_block article:first-child {
-		margin-bottom: 0;
-	}
-	
-	.tea_block article:first-child figcaption h2 {
-		font-size: 1.5em;
-	}
 
 	form {
 		display: flex;
@@ -258,6 +261,41 @@ const allTeas = (await getCollection('teas'))
 		color: oklch(60% 0.104 var(--hue));
 	}
 
+    .page-number {
+        color: var(--green);
+        text-align: center;
+        margin: 3rem 0 1rem;
+    }
+
+    :global(.dark) .page-number {
+        color: var(--active);
+    }
+
+    .pagination-block {
+        display: flex; 
+        justify-content: center; 
+        gap: 3rem; 
+        margin-bottom: 1.5rem;
+    }
+    
+    .pagination-block > a {
+        padding: 0.2rem 0.5rem;
+        border: 1px solid var(--foreground);
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--foreground);
+    }
+
+    :global(.dark) .pagination-block > a {
+        color: var(--foreground-dark);
+        border: 1px solid var(--foreground-dark);
+    }
+
+    .pagination-block > a:hover {
+        color: var(--active);
+        border: 1px solid var(--active);
+    }
+
 	@media(min-width: 48rem) {
 		section .tea_block {
 			gap: 2rem;
@@ -267,18 +305,6 @@ const allTeas = (await getCollection('teas'))
 		.tea_block article { width: calc(50% - 1rem); }
 
 		.tea_block article * { transition: 0.2s ease; }
-
-		.tea_block article:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-		}
-		
-		.tea_block article:first-child img { width: 100%; }
-
-		.tea_block article:first-child .title {
-			font-size: 2rem;
-		}
 
 		.boxes {
 			flex-direction: row;
@@ -290,11 +316,10 @@ const allTeas = (await getCollection('teas'))
 			justify-content: space-around;
 		}
 
-		.pub_date {
-			font-size: .9rem;
-		}
+		.pub_date { font-size: .9rem; }
 
-		.price_row {
-			font-size: .9rem;
-		}
+		.price_row { font-size: .9rem; }
+
+        .pagination-block { margin-bottom: 2rem; }
+    }
 </style>
