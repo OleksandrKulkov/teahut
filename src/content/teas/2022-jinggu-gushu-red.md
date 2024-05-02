@@ -13,7 +13,7 @@ imageAlt: Дяньхон з вікових дерев Дзінґу
 image1: "/src/assets/teas/2022-jinggu-gushu-red/slide1.jpg"
 image1alt: Вікові дерева з Дзінґу
 image2: "/src/assets/teas/2022-jinggu-gushu-red/slide2.jpg"
-image2alt: Серед листя достатньо золотавих бруньок
+image2alt: Це листя чудово заварюється в чаші
 image3: "/src/assets/teas/2022-jinggu-gushu-red/slide3.jpg"
 image3alt: Перша чашка
 image4: "/src/assets/teas/2022-jinggu-gushu-red/slide4.jpg"
