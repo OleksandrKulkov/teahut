@@ -311,6 +311,14 @@ const pageNumber = `сторінка ${page.currentPage}`
 
 		.tea_block article * { transition: 0.2s ease; }
 
+		article {
+			transition: all var(--animation-timing);
+		}
+
+		article:hover {
+			transform: scale(1.05);
+		}
+
 		.boxes {
 			flex-direction: row;
 			justify-content: flex-start;
