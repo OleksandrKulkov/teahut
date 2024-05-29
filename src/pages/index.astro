@@ -1,7 +1,14 @@
 ---
-import ArticleLayout from '../layouts/ArticleLayout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection } from "astro:content";
 import TeaCard from '../components/TeaCard.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = (await getCollection('library'))
+	.filter((post) => post.data.posted !== false)
+	.sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 2);
 
 const allTeas = (await getCollection('teas'))
 	.filter((tea) => tea.data.posted !== false)
@@ -10,29 +17,54 @@ const allTeas = (await getCollection('teas'))
 	.slice(0, 3);
 ---
 
-<ArticleLayout>
-	<h1 class="">Ласкаво просимо</h1>
-	<h3>до нашої</h3>
-	<h2 class="last_line">Чайної Хатинки!</h2>
-	<p>
-		Кожен із нас шукає своєї досконалости так, як він чи вона розуміє її, залежно від загального знання і контексту, який отримали за своє життя, а також від того, що в нас закладено Матінкою Природою...
-	</p>
-	<p>
-		Ми, як і багато хто до нас, шукаємо Довершености у своєму житті через Чай — через ту Традицію, підвалини якої було закладено ще сивої давнини. Ми не намагаємося відкрити щось нове, досі невідоме. Навпаки, за допомогою простих метод ми глибше занурюємось у навколишнє, у те, що маємо саме цієї миті. Якщо Надзвичайне й існує, воно мусить бути тут і зараз...
-	</p>
-	<p>
-		Проте, так само як і кожна чайна людина минулого й сьогодення, ми не прагнемо віднайти досконалість заради себе. Наша Традиція — це служіння людству через Чай. І не тільки через те, що Чай і Чань (Дзен) мають один смак, скільки через глибоке усвідомлення наших зв'язків одне з одним. Кожна чаша сприяє пробудженню і присутности, розкриттю Гармонії і Спокою Всесвіту в людській свідомості.
-	</p>
-	<p class="last_line">
-		Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао" чи "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин Світу. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для всіх нас. Перед Природою і перед Чаєм, Її часточкою, ми рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
-	</p>
-	<h2 class="first_line">Наші нові чаї:</h2>
-	<section class="new_tea">
-		{allTeas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
-	</section>
-</ArticleLayout>
+<MainLayout>
+	<div class="container">
+		<h1 class="">Ласкаво просимо</h1>
+		<h3>до нашої</h3>
+		<h2 class="last_line">Чайної Хатинки!</h2>
+		<p>
+			Кожен із нас шукає своєї досконалости так, як він чи вона розуміє її, залежно від загального знання і контексту, який отримали за своє життя, а також від того, що в нас закладено Матінкою Природою...
+		</p>
+		<p>
+			Ми, як і багато хто до нас, шукаємо Довершености у своєму житті через Чай — через ту Традицію, підвалини якої було закладено ще сивої давнини. Ми не намагаємося відкрити щось нове, досі невідоме. Навпаки, за допомогою простих метод ми глибше занурюємось у навколишнє, у те, що маємо саме цієї миті. Якщо Надзвичайне й існує, воно мусить бути тут і зараз...
+		</p>
+		<p>
+			Проте, так само як і кожна чайна людина минулого й сьогодення, ми не прагнемо віднайти досконалість заради себе. Наша Традиція — це служіння людству через Чай. І не тільки через те, що Чай і Чань (Дзен) мають один смак, скільки через глибоке усвідомлення наших зв'язків одне з одним. Кожна чаша сприяє пробудженню і присутности, розкриттю Гармонії і Спокою Всесвіту в людській свідомості.
+		</p>
+		<p class="last_line">
+			Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао" чи "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин Світу. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для всіх нас. Перед Природою і перед Чаєм, Її часточкою, ми рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
+		</p>
+	</div>
+	<div class="new_posts container2">
+			<h2>Нові статті на сайті:</h2>
+			<section>
+				{allPosts.map((p) => 
+					<BlogPost
+						class="post"
+						url={`/library/${p.slug}/`}
+						title={p.data.title}
+						subtitle={p.data.subtitle}
+						description={p.data.description}
+						pubDate={p.data.pubDate}
+					/>)
+				}
+			</section>
+	</div>
+	<div class="container3">
+		<h2 class="last_line">Наші нові чаї:</h2>
+		<section class="new_tea">
+			{allTeas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
+		</section>
+	</div>
+</MainLayout>
 
 <style>
+	.container { padding: 3rem 1rem 0; }
+
+	.container2 { padding: 3rem 1rem 2rem; }
+
+	.container3 { padding: 3rem 1rem 2rem; }
+
 	h1, h2, h3 { text-align: center; }
 
 	section {
@@ -40,11 +72,21 @@ const allTeas = (await getCollection('teas'))
 		flex-wrap: wrap;
 		gap: 2em;
 		place-content: start center;
-		margin-bottom: 2rem;
+	}
+
+	.new_posts {
+		background-color: var(--button);
 	}
 
 	@media screen  and (min-width: 48rem){
-		section {
+		.container { padding: 3rem 4rem 0; }
+
+		.container2 { padding: 2.5rem 2rem 1rem; }
+
+		.container3 { padding: 3rem 2rem 2rem; }
+
+		
+		.new_tea {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: 1fr;
