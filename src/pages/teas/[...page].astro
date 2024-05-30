@@ -44,6 +44,10 @@ const pageNumber = `сторінка ${page.currentPage}`
 					<input type="checkbox" name="wulong&gaba" checked />
 					Вулони й ҐАБА
 				</label>
+				<label>
+					<input type="checkbox" name="japanese" checked />
+					Японські
+				</label>
 			</div>
 		</form>
 		<div class="tea_block">
@@ -75,8 +79,8 @@ const pageNumber = `сторінка ${page.currentPage}`
 	</section>
     <h5 class="page-number">{pageNumber}</h5>
     <div class="pagination-block">
-        {page.url.prev && <a href={page.url.prev}>Попередня сторінка</a>}
-        {page.url.next && <a href={page.url.next}>Наступна сторінка</a>}
+        {page.url.prev && <a href={page.url.prev}>Попередня</a>}
+        {page.url.next && <a href={page.url.next}>Наступна</a>}
     </div>
 </ArticleLayout>
 
@@ -145,7 +149,8 @@ const pageNumber = `сторінка ${page.currentPage}`
 	section:has([name="heicha"]:checked) article:has([data-category="heicha"]),
 	section:has([name="hongcha"]:checked) article:has([data-category="hongcha"]),
 	section:has([name="baicha&lucha"]:checked) article:has([data-category="baicha&lucha"]),
-	section:has([name="wulong&gaba"]:checked) article:has([data-category="wulong&gaba"]) {
+	section:has([name="wulong&gaba"]:checked) article:has([data-category="wulong&gaba"]),
+	section:has([name="japanese"]:checked) article:has([data-category="japanese"]) {
 		display: block;
 	}
 
@@ -241,25 +246,17 @@ const pageNumber = `сторінка ${page.currentPage}`
 		border: 1px solid oklch(87% 0.1 var(--hue));
 	}
 
-	article:has([data-category="shengcha"]) .container {
-		--hue: 112.44;
-	}
+	article:has([data-category="shengcha"]) .container { --hue: 112.44; }
 
-	article:has([data-category="heicha"]) .container {
-		--hue: 93.5;
-	}
+	article:has([data-category="heicha"]) .container { --hue: 93.5; }
 
-	article:has([data-category="hongcha"]) .container {
-		--hue: 65;
-	}
+	article:has([data-category="hongcha"]) .container { --hue: 65; }
 
-	article:has([data-category="baicha&lucha"]) .container {
-		--hue: 146.65;
-	}
+	article:has([data-category="baicha&lucha"]) .container { --hue: 146.65; }
 
-	article:has([data-category="wulong&gaba"]) .container {
-		--hue: 167.82;
-	}
+	article:has([data-category="wulong&gaba"]) .container { --hue: 167.82; }
+
+	article:has([data-category="japanese"]) .container { --hue: 143.21; }
 
 	article .categories {
 		background: oklch(87% 0.09 var(--hue));
