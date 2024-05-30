@@ -36,7 +36,7 @@ const allTeas = (await getCollection('teas'))
 		</p>
 	</div>
 	<div class="new_posts container2">
-			<h2>Нові статті на сайті:</h2>
+			<h2 class="last_line">Нові статті на сайті:</h2>
 			<section>
 				{allPosts.map((p) => 
 					<BlogPost
@@ -61,9 +61,9 @@ const allTeas = (await getCollection('teas'))
 <style>
 	.container { padding: 3rem 1rem 0; }
 
-	.container2 { padding: 3rem 1rem 2rem; }
+	.container2 { padding: 2rem 1rem 2rem; }
 
-	.container3 { padding: 3rem 1rem 2rem; }
+	.container3 { padding: 2rem 1rem 2rem; }
 
 	h1, h2, h3 { text-align: center; }
 
