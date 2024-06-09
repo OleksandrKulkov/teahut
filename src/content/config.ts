@@ -60,4 +60,18 @@ const library = defineCollection({
   })
 })
 
-export const collections = { teas, library };
+const teatips = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    author: z.string().optional(),
+    description: z.string(),
+    pubDate: z.date(),
+    image: z.string().optional(),
+    posted: z.boolean().optional(),
+    category: z.array(z.string())
+  })
+})
+
+export const collections = { teas, library, teatips };

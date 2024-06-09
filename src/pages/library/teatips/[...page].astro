@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import ArticleLayout from "../../layouts/ArticleLayout.astro";
-import BlogPost from "../../components/BlogPost.astro";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import BlogPost from "../../../components/BlogPost.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allPosts = (await getCollection("library"))
+    const allPosts = (await getCollection("teatips"))
         .filter((post) => post.data.posted !== false)
         .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
@@ -14,13 +14,13 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const { page } = Astro.props;
 
-const title = `Читальня`;
-const pageNumber = page.currentPage
+const title = `Деякі поради щодо заварювання`;
+const pageNumber = `сторінка ${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
   <h1>{title}</h1>
-  <h4 class="last_line">сторінка {pageNumber}</h4>
+  <h4 class="last_line">{pageNumber}</h4>
 
   <section class="posts-preview">
     {
@@ -37,9 +37,9 @@ const pageNumber = page.currentPage
     }
   </section>
   <div class="pagination-block">
-    {page.url.prev && <a href={page.url.prev}>&#8592;</a>}
-    {page.currentPage}
-    {page.url.next && <a href={page.url.next}>&#8594;</a>}
+    {page.url.prev && <a href={page.url.prev}>Попередня сторінка</a>}
+    {pageNumber}
+    {page.url.next && <a href={page.url.next}>Наступна сторінка</a>}
   </div>
 </ArticleLayout>
 
