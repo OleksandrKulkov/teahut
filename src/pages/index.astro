@@ -4,13 +4,13 @@ import { getCollection } from "astro:content";
 import TeaCard from '../components/TeaCard.astro';
 import BlogPost from '../components/BlogPost.astro';
 
-const allPosts = (await getCollection('library'))
+const newPosts = (await getCollection('library'))
 	.filter((post) => post.data.posted !== false)
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 2);
 
-const allTeas = (await getCollection('teas'))
+const newTeas = (await getCollection('teas'))
 	.filter((tea) => tea.data.posted !== false)
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -38,7 +38,7 @@ const allTeas = (await getCollection('teas'))
 	<div class="new_posts container2">
 			<h2 class="last_line">Найновіші статті:</h2>
 			<section>
-				{allPosts.map((p) => 
+				{newPosts.map((p) => 
 					<BlogPost
 						class="post"
 						url={`/library/${p.slug}/`}
@@ -53,7 +53,7 @@ const allTeas = (await getCollection('teas'))
 	<div class="container3">
 		<h2 class="last_line">Наші нові чаї:</h2>
 		<section class="new_tea">
-			{allTeas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
+			{newTeas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
 		</section>
 	</div>
 </MainLayout>
