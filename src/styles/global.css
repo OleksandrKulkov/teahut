@@ -156,7 +156,7 @@ figure>img.align-center {
         float:left;
         margin: 10px 30px 10px 0;
         border: 1px solid #000000;
-        max-width: 300px;
+        max-width: 360px;
         max-height: 480px;
     }
 
@@ -164,7 +164,7 @@ figure>img.align-center {
         display: inline;
         float:right;
         margin: 10px 0 10px 30px;
-        max-width: 300px;
+        max-width: 360px;
         max-height: 480px;
     }
 
