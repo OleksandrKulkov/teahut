@@ -97,12 +97,13 @@ p:not(:last-child) {
     margin-bottom: 1em;
 }
 
-ul {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
+    color: var(--green);
+}
+
+a:hover {
+    color: var(--active);
 }
 
 img {
@@ -134,9 +135,16 @@ img.float-right {
     border: 1px solid #000000;
 }
 
-img.align-center {
+iframe {
+    width: 80%;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+}
+
+img.align-center,
+iframe.align-center {
     display:block;
-    margin: 1rem auto 2rem;
+    margin: 2rem auto 1rem;
 }
 
 figure>img.align-center {

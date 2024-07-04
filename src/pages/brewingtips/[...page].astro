@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import ArticleLayout from "../../../layouts/ArticleLayout.astro";
-import BlogPost from "../../../components/BlogPost.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allPosts = (await getCollection("teatips"))
+    const allPosts = (await getCollection("brewingtips"))
         .filter((post) => post.data.posted !== false)
         .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
@@ -27,7 +27,7 @@ const pageNumber = `сторінка ${page.currentPage}`
       page.data.map((p) => (
         <BlogPost
                 class="post"
-                url={`/library/${p.slug}/`}
+                url={`/brewingtips/${p.slug}/`}
                 title={p.data.title}
                 subtitle={p.data.subtitle}
                 description={p.data.description}

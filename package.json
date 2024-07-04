@@ -15,6 +15,8 @@
     "@astrojs/preact": "^3.1.0",
     "astro": "^4.11.1",
     "astro-icon": "^1.1.0",
+    "astro-pagefind": "^1.5.0",
+    "pagefind": "^1.1.0",
     "preact": "^10.19.4",
     "sharp": "^0.33.2",
     "typescript": "^5.3.3"

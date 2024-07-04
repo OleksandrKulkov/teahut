@@ -1,0 +1,50 @@
+---
+import MainLayout from './MainLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<MainLayout pageTitle={frontmatter.title} >
+    <div class="container">
+        <img src={frontmatter.image} alt="" class="header_image">
+        <h1 class="title">{frontmatter.subtitle}</h1>
+        <h2 class="title last-line">{frontmatter.subsubtitle}</h2>
+        <h4 class="title">{frontmatter.title}</h4>
+        <p class="author last_line">{frontmatter.author}</p>
+            <slot />
+        <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
+        <div style="display: flex; justify-content: end;">
+            <img style="display: block;  width: 70px;" src="/teakettle.gif" alt="Чайник і чашка" />
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+	.container { padding: 3rem 1rem 1rem; }
+
+    .header_image {
+        margin: 0 auto 2rem;
+
+    }
+
+    .title { text-align: center;}
+
+    .last-line { margin-bottom: 2rem;}
+
+    .author { 
+        font-style: italic;
+        text-align: end;
+        margin-right: clamp(2rem, 2cqw, 5rem);
+    }
+
+    .bottom-sign {
+        font-size: 0.9rem;
+        font-style: italic;
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+	@media(min-width: 48rem) {
+		.container { padding: 3rem 4rem 2rem; }
+	}
+</style>
