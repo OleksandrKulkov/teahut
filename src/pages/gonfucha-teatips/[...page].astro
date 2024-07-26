@@ -1,0 +1,94 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const allPosts = (await getCollection("gonfucha-teatips"))
+        .filter((post) => post.data.posted !== false)
+        .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+    );
+    return paginate(allPosts, { pageSize: 12 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+const title = `Поради з Ґонфу Ча`;
+const pageNumber = `сторінка ${page.currentPage}`
+---
+
+<ArticleLayout title={title}>
+  <h1>{title}</h1>
+  <h4 class="last_line">{pageNumber}</h4>
+
+  <section class="posts-preview">
+    {
+      page.data.map((p) => (
+        <BlogPost
+                class="post"
+                url={`/gonfucha-teatips/${p.slug}/`}
+                title={p.data.title}
+                subtitle={p.data.subtitle}
+                description={p.data.description}
+                pubDate={p.data.pubDate}
+        />
+      ))
+    }
+  </section>
+  <div class="pagination-block">
+    {page.url.prev && <a href={page.url.prev}>Попередня</a>}
+    {pageNumber}
+    {page.url.next && <a href={page.url.next}>Наступна</a>}
+  </div>
+</ArticleLayout>
+
+<style>
+    h1, h4 {
+        text-align: center;
+    }
+
+    section.posts-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        place-content: start center;
+		margin-bottom: 2rem;
+    }
+
+    .pagination-block {
+        display: flex; 
+        justify-content: center; 
+        gap: 3rem; 
+        margin-bottom: 1.5rem;
+    }
+    
+    .pagination-block > a {
+        padding: 0.2rem 0.5rem 0.1rem;
+        border: 1px solid var(--foreground);
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--foreground);
+    }
+
+    :global(.dark) .pagination-block > a {
+        color: var(--foreground-dark);
+        border: 1px solid var(--foreground-dark);
+    }
+
+    .pagination-block > a:hover {
+        color: var(--active);
+        border: 1px solid var(--active);
+    }
+
+    @media(min-width: 48rem) {
+        section.posts-preview {
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .pagination-block {
+            margin-bottom: 2rem;
+        }
+    }
+</style>

@@ -93,6 +93,31 @@ h5 {
     font-size: 1.04em;
 }
 
+table {
+    display: table;
+    width: 80%;
+    margin: 0 auto;
+    border-spacing: 2px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: 0;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+
+th,
+td {
+	border: 1px solid;
+}
+
+td {
+    text-align: center;
+    /* padding-left: 1rem; */
+}
+
 p:not(:last-child) {
     margin-bottom: 1em;
 }
@@ -135,8 +160,14 @@ img.float-right {
     border: 1px solid #000000;
 }
 
+.next-page {
+    font-size: 1rem;
+    padding-left: 1rem;
+    margin-top: 2rem;
+}
+
 iframe {
-    width: 80%;
+    width: 100%;
     aspect-ratio: 16/9;
     border-radius: 0.5rem;
 }
