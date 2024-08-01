@@ -175,7 +175,7 @@ iframe {
 img.align-center,
 iframe.align-center {
     display:block;
-    margin: 2rem auto 1rem;
+    margin: 2rem auto;
 }
 
 figure>img.align-center {
