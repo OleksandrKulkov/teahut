@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BrewingTipsLayout from '../../layouts/BrewingTipsLayout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('gonfu-teapot');
@@ -14,6 +14,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BrewingTipsLayout frontmatter={entry.data}>
+<BlogLayout frontmatter={entry.data}>
     <Content />
-</BrewingTipsLayout>
+</BlogLayout>
