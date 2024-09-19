@@ -15,12 +15,11 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const title = `Деякі поради щодо заварювання`;
-const pageNumber = `сторінка ${page.currentPage}`
+const pageNumber = `${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
   <h1>{title}</h1>
-  <h4 class="last_line">{pageNumber}</h4>
 
   <section class="posts-preview">
     {
@@ -37,9 +36,9 @@ const pageNumber = `сторінка ${page.currentPage}`
     }
   </section>
   <div class="pagination-block">
-    {page.url.prev && <a href={page.url.prev}>Попередня сторінка</a>}
+    {page.url.prev && <a href={page.url.prev}>Попередня</a>}
     {pageNumber}
-    {page.url.next && <a href={page.url.next}>Наступна сторінка</a>}
+    {page.url.next && <a href={page.url.next}>Наступна</a>}
   </div>
 </ArticleLayout>
 
