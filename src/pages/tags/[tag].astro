@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const uniqueTags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
 
   return uniqueTags.map((tag) => {
-    const filteredTeas = allTeas.filter((tea) => tea.data.tags.includes(tag));
+    const filteredTeas = allTeas.filter((tea) => tea.data.tags.includes(tag) && tea.data.posted !== false);
     return {
       params: { tag },
       props: { teas: filteredTeas },
@@ -24,7 +24,7 @@ const { teas } = Astro.props;
   <div class="container">
     <h3 class="header">Чаї, позначені як <span>"{tag}"</span>:</h3>
     <section>
-      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.slug}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
+      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.id}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
     </section>
   </div>
 </MainLayout>

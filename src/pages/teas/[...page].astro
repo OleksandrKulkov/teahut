@@ -54,7 +54,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 			{page.data.map((tea) => (
 				<article>
 					<div class="container">
-						<a href={`/teas/${tea.slug}/`} data-astro-prefetch>
+						<a href={`/teas/${tea.id}/`} data-astro-prefetch>
 							<figure class="tea">
 								<Image 
 									src={tea.data.image} 

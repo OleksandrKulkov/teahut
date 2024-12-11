@@ -5,7 +5,7 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allPosts = (await getCollection("tea-and-seasons"))
+    const allPosts = (await getCollection("teaandseasons"))
         .filter((post) => post.data.posted !== false)
         .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
@@ -19,7 +19,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
-  <h1>{title}</h1>
+  <h1 class="last_line">{title}</h1>
   <h4 class="last_line">{pageNumber}</h4>
 
   <section class="posts-preview">
@@ -27,7 +27,7 @@ const pageNumber = `сторінка ${page.currentPage}`
       page.data.map((p) => (
         <BlogPost
                 class="post"
-                url={`/tea-and-seasons/${p.slug}/`}
+                url={`/teaandseasons/${p.id}/`}
                 title={p.data.title}
                 subtitle={p.data.subtitle}
                 description={p.data.description}

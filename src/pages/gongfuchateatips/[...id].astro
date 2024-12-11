@@ -1,17 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BrewingTipsLayout from '../../layouts/BrewingTipsLayout.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('tea-and-seasons');
+  const blogEntries = await getCollection("gongfuchateatips");
   return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, 
+    params: { id: entry.id }, 
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <BrewingTipsLayout frontmatter={entry.data}>

@@ -153,6 +153,10 @@ img {
     margin-bottom: 1.8rem;
 }
 
+.double_last_line {
+    margin-bottom: 3.6rem;
+}
+
 img.float-left,
 img.float-right {
     display:block;

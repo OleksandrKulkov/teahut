@@ -19,14 +19,14 @@ const pageNumber = `${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
-  <h1>{title}</h1>
+  <h1 class="double_last_line">{title}</h1>
 
   <section class="posts-preview">
     {
       page.data.map((p) => (
         <BlogPost
                 class="post"
-                url={`/brewingtips/${p.slug}/`}
+                url={`/brewingtips/${p.id}/`}
                 title={p.data.title}
                 subtitle={p.data.subtitle}
                 description={p.data.description}

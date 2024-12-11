@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
 ---
@@ -10,5 +10,5 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
 </head>
